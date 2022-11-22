@@ -1,0 +1,171 @@
+@font-face {
+    font-family: 'Fahkwang';
+    src: local('Fahkwang'),
+    url('./fonts/Fahkwang/Fahkwang-Regular.ttf') format("truetype")
+}
+
+/* HTML OVERRIDES */
+img {
+    /* image wont get bigger than its actual size ~ try width 100% for scaling */
+    width: 100%;
+    display: inline;
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+p{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+/* UTILITY */
+.container {
+    width: 90%;
+    align-content: center;
+    margin: 0 auto;
+}
+
+.font{
+    font-family: "Fahkwang";
+}
+
+.border {
+    border: 1px solid black;
+}
+
+
+
+/* NAVIGATION */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    font-size: 2rem;
+    align-items: center;
+    /* text-align: center; */
+    /* height: auto;
+    width: 100%;
+    max-width: 20%; */
+   /* border: 2px red solid; */
+}
+
+.links{
+    display: flex;
+    justify-content: space-aro;
+    align-items: center;
+}
+
+.link{
+    padding: 1rem;
+    margin-left: 1rem ;
+}
+.link:hover{
+    color: #FFA500;
+    border-bottom: 1px solid orange;
+}
+.link:focus{
+    color: #FFA500;
+}
+
+.current-page{
+    border-bottom: 1px solid black;
+
+}
+
+
+
+/* JUMBOTRON */
+.jumbotron{
+    text-align: center;
+    margin: 0 auto;
+
+}
+
+
+
+/* CARDS */
+.card-container{
+    max-width: 30%;
+    margin-bottom: 1rem;
+    border: 1px solid gray;  
+}
+.overlay{
+    position: relative;
+    /* display: inline-block; */
+}
+.card-header{
+    text-align: center;
+}
+.card-image{
+    display: block;
+}
+
+.card-text{
+    color: #fff;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    font-weight: 600;
+    position: absolute;    
+    padding-right: 0.5rem;
+    /* bottom: 0;
+    right: 0; */
+ 
+}
+.card-displayContainer {
+    display: flex;
+    align-items: center;
+}
+
+.card-display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-height: 3250px;
+    overflow: hidden;
+}
+
+
+
+/* MEDIA QUERIES */
+
+@media (max-width: 675px){
+    .navbar{
+        text-align: center;
+        flex-direction: column;
+    }
+    .logo{
+        flex-direction: column;
+    }
+    .links{
+        flex-direction: column;
+    }
+    .link{
+        padding: 0.5rem;
+        margin: auto 0;
+    }
+}
+
+@media (min-width: 960px){
+    .container{
+        max-width: 975px;
+    }
+    .jumbotron{
+        max-width: 975px;
+        align-content: center;
+    }
+    .card-container{
+        max-width: 25%;
+    }
+}
+
