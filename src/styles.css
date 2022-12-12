@@ -24,14 +24,19 @@ p{
 body{
     margin-left: 0;
     margin-right: 0;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(238,238,238,1) 0%, rgba(196,196,196,1) 100%);
 }
-
 
 /* UTILITY */
 .container {
-    width: 90%;
-    align-content: center;
+    text-align: center;
     margin: 0 auto;
+    width: 90%;
+}
+
+.white {
+    background-color: white;
 }
 
 .font{
@@ -42,55 +47,71 @@ body{
     border: 1px solid black;
 }
 
+.mainContainer {
+    background-color: white;
+}
 
+.content-container{
+    margin: 1rem 0 ;
+    padding: 1rem;
+}
+
+/* BANNER */
+.banner {
+    text-align: center;
+}
+
+.logo {
+    height: auto;
+    width: 100%;
+    max-width: 20%;
+}
 
 /* NAVIGATION */
 .navbar{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+
+    margin-top: 1rem;
+    margin-bottom: ;
+    padding: 1em;
 }
 
-.logo {
-    display: flex;
-    font-size: 2rem;
-    align-items: center;
-    /* text-align: center; */
-    /* height: auto;
-    width: 100%;
-    max-width: 20%; */
-   /* border: 2px red solid; */
-}
+
 
 .links{
     display: flex;
-    justify-content: space-aro;
+    justify-content: flex-end;
     align-items: center;
 }
 
 .link{
-    padding: 1rem;
-    margin-left: 1rem ;
+    /* color: white; */
+    padding: 0 1rem ;
+    margin-left: 2rem ;
+    text-decoration: none;
+    color: black;
 }
-.link:hover{
+
+/* .link:hover{
+    color: #2db44f;
+    border-bottom: 1px solid orange;
+} */
+.link-active{
+    color: #e904e9;
+}
+/* .link:focus{
     color: #FFA500;
     border-bottom: 1px solid orange;
-}
-.link:focus{
-    color: #FFA500;
-}
-
-.current-page{
-    border-bottom: 1px solid black;
-
-}
+} */
 
 
 
 /* JUMBOTRON */
 .jumbotron{
     text-align: center;
-    margin: 0 auto;
-
+    margin: 0 0;
+    position: relative;
 }
 
 
@@ -103,6 +124,7 @@ body{
 }
 .overlay{
     position: relative;
+    /* z-index: -1; */
     /* display: inline-block; */
 }
 .card-header{
@@ -162,6 +184,7 @@ body{
     }
     .jumbotron{
         max-width: 975px;
+        margin: 0 auto;
         align-content: center;
     }
     .card-container{

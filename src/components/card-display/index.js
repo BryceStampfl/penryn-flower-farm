@@ -8,13 +8,10 @@ const CardDisplay = () => {
     const [index, setIndex] = React.useState(0);
 
     let cards = [];
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 6; i++) {
         cards.push(<Card />)
     }
 
-    const leftClick = () => {
-
-    }
 
 
     return (
