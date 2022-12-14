@@ -12,7 +12,7 @@ import Banner from './components/banner';
 import CardDisplay from './components/card-display'
 import Navbar from './components/navbar';
 import Jumbotron from './components/jumbotron';
-
+import About from './components/about';
 
 const App = () => {
   return (
@@ -24,6 +24,7 @@ const App = () => {
           <Route path="/" element={<Jumbotron />} />
           <Route path="/Flowers" element={<CardDisplay />} />
           <Route path="/Subscription" element={<CardDisplay />} />
+          <Route path="/About" element={<About />} />
         </Routes>
 
       </div>
