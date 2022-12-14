@@ -12,7 +12,7 @@ const Card = () => {
                 <div className='card-text font'>
                     <p>$10</p>
                 </div>
-                <img src={SunFlowers} className='card-image' />
+                <img src={SunFlowers} className='card-image image' />
             </div>
         </div>
     )

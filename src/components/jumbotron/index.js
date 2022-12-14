@@ -5,7 +5,7 @@ import Garden from '../../images/shovel.jpg'
 const Jumbotron = () => {
     return (
         <div className='jumbotron '>
-            <img src={Garden} />
+            <img src={Garden} className='image' />
         </div>
 
     )

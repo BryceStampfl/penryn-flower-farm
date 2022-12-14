@@ -7,7 +7,7 @@
 /* HTML OVERRIDES */
 img {
     /* image wont get bigger than its actual size ~ try width 100% for scaling */
-    width: 100%;
+    /* width: 100%; */
     display: inline;
 }
 
@@ -28,6 +28,11 @@ body{
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(238,238,238,1) 0%, rgba(196,196,196,1) 100%);
 }
 
+.image {
+    width: 100%;
+    display: inline;
+
+}
 /* UTILITY */
 .container {
     text-align: center;

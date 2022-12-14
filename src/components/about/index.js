@@ -1,28 +1,40 @@
 import React, { useEffect } from 'react'
 import '../../styles.css'
-import Garden from '../../images/Garden.jpg'
-import Buffer from 'buffer'
+import axios from "axios";
+import photos from './photos'
+import Gallery from "react-photo-gallery";
 
 const About = () => {
-    const [images, setImages] = React.useState([])
+    const [images, setImages] = React.useState()
 
 
-    useEffect(() => {
-        fetch(`https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}/resources/image`, {
-            headers: {
-                // Authorization: `Basic ${(process.env.REACT_APP_CLOUDINARY_API_KEY + ':' + process.env.REACT_APP_CLOUDINARY_API_SECRET).toString('base64')}`,
+    // useEffect(() => {
+    //     let shouldCancel = false;
 
-            }
-        })
-            .then(r => r.json())
-            .then(data => setImages(data))
-            .then(data => console.log(data))
-    }, []);
+    //     const call = async () => {
+    //         const response = await axios.get(
+    //             "https://google-photos-album-demo2.glitch.me/4eXXxxG3rYwQVf948"
+    //         );
+    //         if (!shouldCancel && response.data && response.data.length > 0) {
+    //             // setImages(response.data.map((image => ({
+    //             //     src: image,
+    //             //     height: 3,
+    //             //     width: 4
+    //             // }))));
+    //             setImages(photos)
+    //             console.log(response.data)
+    //         }
+    //     };
+    //     call();
+    //     return () => (shouldCancel = true);
+    // }, []);
 
     return (
-        <div className='jumbotron'>
-            <img src={Garden} />
-        </div>
+        // images ?
+        (<Gallery photos={photos} />)
+        // (<Gallery photos={images} />)
+
+        // : null
     )
 }
 export default About
