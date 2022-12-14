@@ -5,7 +5,7 @@ import Buffer from 'buffer'
 
 const About = () => {
 
-    results = "";
+    const results = "";
     async function getResults() {
         const results = await fetch(`https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}/resources/image`, {
             headers: {
