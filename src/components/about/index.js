@@ -10,7 +10,8 @@ const About = () => {
     useEffect(() => {
         fetch(`https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}/resources/image`, {
             headers: {
-                Authorization: `Basic ${(process.env.REACT_APP_CLOUDINARY_API_KEY + ':' + process.env.REACT_APP_CLOUDINARY_API_SECRET).toString('base64')}`
+                // Authorization: `Basic ${(process.env.REACT_APP_CLOUDINARY_API_KEY + ':' + process.env.REACT_APP_CLOUDINARY_API_SECRET).toString('base64')}`,
+
             }
         })
             .then(r => r.json())
