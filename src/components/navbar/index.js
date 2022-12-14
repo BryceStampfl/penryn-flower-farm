@@ -1,36 +1,67 @@
 import React from 'react'
-import Logo from '../../images/Logo.png'
+import NavLink from './NavLink';
+
 
 const Navbar = () => {
+    const [navLinks, setNavLinks] = React.useState(linkData)
+
+    const linkClicked = (linkName) => {
+        let newLinks = [...navLinks];
+        newLinks.map((link) => {
+            if (link.name === linkName) { link.active = true }
+            else { link.active = false }
+        })
+        return setNavLinks(newLinks)
+    }
+
 
     const links = (
-        Links.map((link) => {
-            return <Link name={link} />
+        navLinks.map((link) => {
+            return <NavLink
+                active={link.active}
+                name={link.name}
+                path={link.path}
+                onClick={linkClicked}
+            />
         })
     )
 
-    return(
-        <nav className='navbar'>
-            <div className='logo font'>
-            <p>
-                Penryn Flower Farm
-            </p>
-            </div>
-            <ul className='links '>
-             {links}
+    return (
+        <nav className='navbar white '>
+            <ul className='links'>
+                {links}
             </ul>
         </nav>
     )
 }
 export default Navbar
 
-const Links = ['Home', 'Flowers', 'About']
+const linkData = [{
+    path: '/',
+    name: 'Home',
+    active: true,
+},
+{
+    path: '/Flowers',
+    name: 'Flowers',
+    active: false,
 
-const Link = ({name}) => {
+},
+{
+    path: '/Subscription',
+    name: 'Subscription',
+    active: false,
 
-    return(
-        <span className='link font'>
-        <li><a>{name}</a></li>
-        </span>
-    )
-}
+},
+{
+    path: '/GiftCards',
+    name: 'Gift Cards',
+    active: false,
+
+},
+{
+    path: '/About',
+    name: 'About',
+    active: false,
+
+}];
