@@ -13,6 +13,7 @@ import CardDisplay from './components/card-display'
 import Navbar from './components/navbar';
 import Jumbotron from './components/jumbotron';
 import About from './components/about';
+import Login from './components/login';
 
 const App = () => {
   return (
@@ -25,12 +26,9 @@ const App = () => {
           <Route path="/Flowers" element={<CardDisplay />} />
           <Route path="/Subscription" element={<CardDisplay />} />
           <Route path="/About" element={<About />} />
+          <Route path="/Login" element={<Login />} />
         </Routes>
-
       </div>
-
-
-
     </div>
   )
 
