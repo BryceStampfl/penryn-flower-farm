@@ -1,4 +1,9 @@
 version: 1
+backend:
+  phases:
+    preBuild:
+      commands:
+        - amplifyPush --simple
 frontend:
   phases:
     preBuild:
@@ -6,9 +11,6 @@ frontend:
         - npm ci
     build:
       commands:
-        - REACT_APP_CLOUDINARY_API_KEY=${REACT_APP_CLOUDINARY_API_KEY}
-        - REACT_APP_CLOUDINARY_API_SECRET=${REACT_APP_CLOUDINARY_API_SECRET}
-        - REACT_APP_CLOUDINARY_CLOUD_NAME=${REACT_APP_CLOUDINARY_CLOUD_NAME}
         - npm run build
   artifacts:
     baseDirectory: build
