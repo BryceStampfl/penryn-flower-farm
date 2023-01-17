@@ -7,6 +7,7 @@ export const onCreateProduct = /* GraphQL */ `
       id
       name
       description
+      imageKey
       createdAt
       updatedAt
     }
@@ -18,6 +19,7 @@ export const onUpdateProduct = /* GraphQL */ `
       id
       name
       description
+      imageKey
       createdAt
       updatedAt
     }
@@ -29,6 +31,7 @@ export const onDeleteProduct = /* GraphQL */ `
       id
       name
       description
+      imageKey
       createdAt
       updatedAt
     }

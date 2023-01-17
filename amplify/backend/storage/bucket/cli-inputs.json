@@ -1,0 +1,14 @@
+{
+  "resourceName": "bucket",
+  "policyUUID": "0f20b9db",
+  "bucketName": "penrynflowerfarmbucket",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

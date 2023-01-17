@@ -15,6 +15,16 @@ export type AmplifyDependentResourcesAttributes = {
             "UserPoolName": "string",
             "AppClientIDWeb": "string",
             "AppClientID": "string"
+        },
+        "userPoolGroups": {
+            "AdminGroupRole": "string",
+            "UsersGroupRole": "string"
+        }
+    },
+    "storage": {
+        "bucket": {
+            "BucketName": "string",
+            "Region": "string"
         }
     }
 }
