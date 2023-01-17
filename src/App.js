@@ -12,7 +12,9 @@ import Banner from './components/banner';
 import CardDisplay from './components/card-display'
 import Navbar from './components/navbar';
 import Jumbotron from './components/jumbotron';
-
+import About from './components/about';
+import Login from './components/login';
+import Admin from './components/admin'
 
 const App = () => {
   return (
@@ -24,12 +26,11 @@ const App = () => {
           <Route path="/" element={<Jumbotron />} />
           <Route path="/Flowers" element={<CardDisplay />} />
           <Route path="/Subscription" element={<CardDisplay />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/Admin" element={<Admin />} />
         </Routes>
-
       </div>
-
-
-
     </div>
   )
 

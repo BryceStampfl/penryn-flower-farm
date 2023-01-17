@@ -1,0 +1,16 @@
+type User @model @auth(rules: [{allow: private, operations: [create, read, update]}]) {
+  id: ID!
+  email: AWSEmail
+  address: String
+  name: String
+  phone: AWSPhone
+}
+
+type Product @model @auth(rules: [{allow: public, operations: [read]}, {allow: groups, groups: ["Admin"], operations: [read, create, update, delete]}, {allow: groups, groups: ["Users"], operations: [read]}]) {
+  id: ID!
+  name: String!
+  description: String
+  imageKey: String
+  price: Float
+}
+ 

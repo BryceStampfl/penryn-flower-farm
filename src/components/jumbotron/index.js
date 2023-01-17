@@ -1,11 +1,11 @@
 import React from 'react'
 import '../../styles.css'
-import Garden from '../../images/shovel.jpg'
+import Garden from '../../images/Zinea.jpg'
 
 const Jumbotron = () => {
     return (
         <div className='jumbotron '>
-            <img src={Garden} />
+            <img src={Garden} className='image' />
         </div>
 
     )
