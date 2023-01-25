@@ -7,6 +7,7 @@ export const getProduct = /* GraphQL */ `
       id
       name
       description
+      price
       imageKey
       createdAt
       updatedAt
@@ -24,6 +25,7 @@ export const listProducts = /* GraphQL */ `
         id
         name
         description
+        price
         imageKey
         createdAt
         updatedAt

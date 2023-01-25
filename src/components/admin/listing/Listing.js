@@ -31,10 +31,10 @@ const Listing = ({ product, deleteProduct }) => {
         >
             <Image src={imageUrl} />
             <Text as="strong" fontWeight={700}>
-                {product.name}
+                Name: {product.name}
             </Text>
-            <Text as="span">{product.description}</Text>
-            <Text as="span">{product.price}</Text>
+            <Text as="span">Description: {product.description}</Text>
+            <Text as="span">Price: {product.price}</Text>
             <Button variation="link" onClick={() => deleteProduct(product)}>
                 Delete product
             </Button>
