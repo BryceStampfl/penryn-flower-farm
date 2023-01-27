@@ -4,6 +4,8 @@
     url('./fonts/Fahkwang/Fahkwang-Regular.ttf') format("truetype")
 }
 
+
+
 /* HTML OVERRIDES */
 img {
     /* image wont get bigger than its actual size ~ try width 100% for scaling */
@@ -38,6 +40,8 @@ body{
     text-align: center;
     margin: 0 auto;
     width: 90%;
+    padding: 1rem;
+    margin-top: 1rem;
 }
 
 .white {
@@ -78,7 +82,7 @@ body{
     justify-content: center;
 
     margin-top: 1rem;
-    margin-bottom: ;
+    /* margin-bottom: 1rem; */
     padding: 1em;
 }
 
@@ -185,7 +189,7 @@ body{
 
 @media (min-width: 960px){
     .container{
-        max-width: 975px;
+        max-width: 960px;
     }
     .jumbotron{
         max-width: 975px;

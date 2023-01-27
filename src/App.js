@@ -9,7 +9,8 @@ import {
 } from "react-router-dom";
 
 import Banner from './components/banner';
-import CardDisplay from './components/card-display'
+import ProductContainer from './components/product/ProductContainer';
+// import CardDisplay from './components/card-display'
 import Navbar from './components/navbar';
 import Jumbotron from './components/jumbotron';
 import About from './components/about';
@@ -18,14 +19,14 @@ import Admin from './components/admin'
 
 const App = () => {
   return (
-    <div id='ApplicationContainer' className='container  '>
+    <div id='ApplicationContainer'>
       <Banner />
       <Navbar />
-      <div className='content-container white '>
+      <div className='container white '>
         <Routes>
           <Route path="/" element={<Jumbotron />} />
-          <Route path="/Flowers" element={<CardDisplay />} />
-          <Route path="/Subscription" element={<CardDisplay />} />
+          <Route path="/Flowers" element={<ProductContainer />} />
+          {/* <Route path="/Subscription" element={<CardDisplay />} /> */}
           <Route path="/About" element={<About />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Admin" element={<Admin />} />
