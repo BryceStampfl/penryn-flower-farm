@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 
 const NavLink = ({ name, path, active, onClick }) => {
-
     return (
         <li>
             <a>

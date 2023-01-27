@@ -24,8 +24,7 @@ p{
     padding: 0;
 }
 body{
-    margin-left: 0;
-    margin-right: 0;
+    margin: 0;
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(238,238,238,1) 0%, rgba(196,196,196,1) 100%);
 }
@@ -40,8 +39,8 @@ body{
     text-align: center;
     margin: 0 auto;
     width: 90%;
-    padding: 1rem;
-    margin-top: 1rem;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 .white {
@@ -61,8 +60,8 @@ body{
 }
 
 .content-container{
-    margin: 1rem 0 ;
-    padding: 1rem;
+    margin: 0.5rem 0 ;
+    padding: 0.5rem;
 }
 
 /* BANNER */
@@ -81,11 +80,10 @@ body{
     display: flex;
     justify-content: center;
 
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     /* margin-bottom: 1rem; */
-    padding: 1em;
+    padding: 0.5rem;
 }
-
 
 
 .links{
@@ -96,8 +94,9 @@ body{
 
 .link{
     /* color: white; */
+    font-size: 1.1rem;
     padding: 0 1rem ;
-    margin-left: 2rem ;
+    margin-left: 1rem ;
     text-decoration: none;
     color: black;
 }
@@ -118,55 +117,11 @@ body{
 
 /* JUMBOTRON */
 .jumbotron{
+    max-height: 40vh;
     text-align: center;
     margin: 0 0;
     position: relative;
 }
-
-
-
-/* CARDS */
-.card-container{
-    max-width: 30%;
-    margin-bottom: 1rem;
-    border: 1px solid gray;  
-}
-.overlay{
-    position: relative;
-    /* z-index: -1; */
-    /* display: inline-block; */
-}
-.card-header{
-    text-align: center;
-}
-.card-image{
-    display: block;
-}
-
-.card-text{
-    color: #fff;
-    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
-    font-weight: 600;
-    position: absolute;    
-    padding-right: 0.5rem;
-    /* bottom: 0;
-    right: 0; */
- 
-}
-.card-displayContainer {
-    display: flex;
-    align-items: center;
-}
-
-.card-display {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-height: 3250px;
-    overflow: hidden;
-}
-
-
 
 /* MEDIA QUERIES */
 
@@ -192,12 +147,10 @@ body{
         max-width: 960px;
     }
     .jumbotron{
-        max-width: 975px;
+        /* max-width: 975px; */
         margin: 0 auto;
         align-content: center;
     }
-    .card-container{
-        max-width: 25%;
-    }
+
 }
 

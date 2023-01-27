@@ -48,14 +48,3 @@ const ProductContainer = () => {
         )
 }
 export default ProductContainer
-
-
-// {
-//     productData.map((data) => {
-//         return <Product name={data.name}
-//             price={data.price}
-//             descripton={data.descripton}
-//             imageKey={data.imageKey}
-//         />
-//     })
-// }

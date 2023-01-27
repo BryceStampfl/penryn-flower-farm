@@ -9,6 +9,7 @@ import {
     Image,
     Text,
     View,
+    Divider
 } from '@aws-amplify/ui-react';
 
 const Product = ({ data }) => {
@@ -29,33 +30,28 @@ const Product = ({ data }) => {
         <View>
             <Card>
                 <Flex direction={{ base: 'column', medium: 'row' }} alignItems={{ base: 'center', medium: 'flex-start' }}>
-                    {/* <Image src={imageUrl} /> */}
-
                     <Image
                         src={imageUrl}
-                        width={{ base: '50%', medium: '50%' }}
+                        width={{ base: '50%', medium: '100%' }}
                     />
                     <Flex
                         direction="column"
                         justifyContent='center'
                         alignItems='center'
                     >
-
                         <Heading level={5}>
-                            {/* New Zealand White Water Outdoor Adventure */}
                             {data.name}
                         </Heading>
-
-                        <Text as="span">
-                            {data.description} <br></br>
-                            Join us on this beautiful outdoor adventure through the glittering
-                            rivers through the snowy peaks on New Zealand.
+                        <Text as="span" textAlign='left'>
+                            {data.description}
                         </Text>
-                        <Text>{data.price}</Text>
-                        {/* <Button variation="primary">Book it</Button> */}
+                        <Text>Price: ${data.price}</Text>
+                        <Button variation='primary'>Purchase</Button>
                     </Flex>
                 </Flex>
             </Card>
+            <Divider
+                orientation="horizontal" />
         </View>
     )
 }
