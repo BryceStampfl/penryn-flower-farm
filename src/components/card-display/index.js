@@ -18,13 +18,13 @@ import {
 import { listProducts } from '../../graphql/queries';
 
 const CardDisplay = () => {
-    const [cardData, setCardData] = React.useState();
+    const [cardData, setCardData] = React.useState(null);
 
 
-    let cards = [];
-    for (let i = 0; i < 6; i++) {
-        cards.push(<Card />)
-    }
+
+
+
+
 
     React.useEffect(() => {
         fetchProducts()
@@ -46,21 +46,23 @@ const CardDisplay = () => {
         setCardData(productsFromAPI);
     }
 
+    if (cardData === null) {
+        return (<div>loading</div>)
+    }
+    else
+        return (
+            <div className='card-displayContainer'>
+                <div className='card-display'>
+                    {cardData.map((data) => {
+                        return <Card name={data.name}
+                            price={data.price}
+                            descripton={data.descripton}
+                        />
+                    })}
+                </div>
+            </div>
 
-    return (
-        <div className='card-displayContainer'>
-            <div>
-                <AiOutlineArrowLeft />
-            </div>
-            <div className='card-display'>
-                {cards}
-            </div>
-            <div>
-                <AiOutlineArrowRight />
-            </div>
-        </div>
-
-    )
+        )
 
 }
 export default CardDisplay
