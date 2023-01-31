@@ -9,10 +9,7 @@ const Listing = ({ product, deleteProduct }) => {
 
     React.useEffect(() => {
         async function getImageUrl() {
-            console.log("product is ", product)
-            console.log("image key is ", product.key)
             const url = await Storage.get(product.imageKey)
-            console.log("Image Url is ", url)
             setImageUrl(url)
         }
         if (imageUrl == '') {
@@ -35,7 +32,7 @@ const Listing = ({ product, deleteProduct }) => {
             </Text>
             <Text as="span">Description: {product.description}</Text>
             <Text as="span">Price: {product.price}</Text>
-            <Button variation="link" onClick={() => deleteProduct(product)}>
+            <Button variation="link" onClick={() => deleteProduct(product.id)}>
                 Delete product
             </Button>
 

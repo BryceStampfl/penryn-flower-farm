@@ -1,6 +1,6 @@
-import { API, Storage } from 'aws-amplify';
+import { API } from 'aws-amplify';
 import React, { useState, useEffect } from 'react'
-import { Button, Flex, Heading, Image, Text, Tabs, TabItem, TextField, View, } from '@aws-amplify/ui-react';
+import { Heading, Tabs, TabItem, View, } from '@aws-amplify/ui-react';
 import { listProducts } from "../../graphql/queries";
 import {
     createProduct as createProductMutation,
@@ -13,7 +13,6 @@ const Admin = () => {
     const [index, setIndex] = React.useState(0)
     const [products, setProducts] = useState([]);
 
-
     useEffect(() => {
         fetchProducts();
     }, []);
@@ -21,14 +20,10 @@ const Admin = () => {
     async function fetchProducts() {
         const apiData = await API.graphql({ query: listProducts });
         const productsFromAPI = apiData.data.listProducts.items;
-        console.log(productsFromAPI)
         setProducts(productsFromAPI);
     }
 
-
-
-
-    async function deleteProduct({ id }) {
+    async function deleteProduct(id) {
         const newProducts = products.filter((product) => product.id !== id);
         setProducts(newProducts);
         await API.graphql({
@@ -38,7 +33,6 @@ const Admin = () => {
 
         });
     }
-
 
     return (
         <div id='ApplicationContainer' className='container'>
