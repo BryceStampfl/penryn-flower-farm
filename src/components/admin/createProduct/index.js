@@ -25,7 +25,7 @@ const CreateProduct = ({ fetchProducts }) => {
         } catch (error) {
             console.log("Error uploading file: ", error);
         } finally {
-            console.log(key)
+            // console.log(key)
         }
 
         // Upload the form data
@@ -36,7 +36,7 @@ const CreateProduct = ({ fetchProducts }) => {
             description: form.get("description"),
             imageKey: key.key,
         };
-        console.log(data)
+        // console.log(data)
         await API.graphql({
             query: createProductMutation,
             variables: { input: data },
