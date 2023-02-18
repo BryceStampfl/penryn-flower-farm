@@ -35,7 +35,9 @@ const Admin = () => {
     }
 
     return (
-        <div id='ApplicationContainer' className='container'>
+        <View
+            margin='4em'
+        >
             <Tabs
                 currentIndex={index}
                 onChange={(i) => setIndex(i)}
@@ -55,7 +57,7 @@ const Admin = () => {
             </Tabs>
 
 
-        </div>
+        </View>
     )
 }
 export default Admin

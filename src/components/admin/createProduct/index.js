@@ -1,11 +1,7 @@
 import { API, Storage } from 'aws-amplify';
-import React, { useState, useEffect } from 'react'
-import { Button, Flex, Heading, Image, Text, Tabs, TabItem, TextField, View, } from '@aws-amplify/ui-react';
-import { listProducts } from "../../../graphql/queries";
-import {
-    createProduct as createProductMutation,
-    deleteProduct as deleteProductMutation,
-} from "../../../graphql/mutations";
+import React, { useState } from 'react'
+import { Button, Image, TextField, View, } from '@aws-amplify/ui-react';
+import { createProduct as createProductMutation } from "../../../graphql/mutations";
 
 
 const CreateProduct = ({ fetchProducts }) => {
@@ -19,7 +15,7 @@ const CreateProduct = ({ fetchProducts }) => {
         // Upload the image first to get the key 
         let key = '';
         try {
-            key = await Storage.put(img.name, img, {
+            key = await Storage.put('products/' + img.name, img, {
                 contentType: "image/png"
             });
         } catch (error) {

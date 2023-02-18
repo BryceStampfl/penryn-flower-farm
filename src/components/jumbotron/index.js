@@ -1,15 +1,14 @@
 import React from 'react'
 import '../../styles.css'
-import Garden from '../../images/Zinea.jpg'
+import Garden from '../../images/Garden.jpg'
 
-
+import { Image } from '@aws-amplify/ui-react'
 
 const Jumbotron = () => {
     return (
         <div className=''>
-            <img src={Garden} className='jumbotron' />
+            <Image src={Garden} className='jumbotron' />
         </div>
-
     )
 }
 export default Jumbotron

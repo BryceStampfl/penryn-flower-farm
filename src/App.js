@@ -8,23 +8,25 @@ import {
   Link
 } from "react-router-dom";
 
+import { View } from '@aws-amplify/ui-react';
+
 import Banner from './components/banner';
 import ProductContainer from './components/product/ProductContainer';
 import Navbar from './components/navbar';
-import Jumbotron from './components/jumbotron';
 import About from './components/about';
 import Login from './components/login';
 import Admin from './components/admin'
 import Subscription from './components/subscription';
+import Home from './components/home';
 
 const App = () => {
   return (
-    <div id='ApplicationContainer'>
+    <View id='ApplicationContainer'>
       <Banner />
       <Navbar />
-      <div className='container white '>
+      <View textAlign='center'>
         <Routes>
-          <Route path="/" element={<Jumbotron />} />
+          <Route path="/" element={<Home />} />
           <Route path="/Flowers" element={<ProductContainer />} />
           <Route path="/Subscription" element={<Subscription />} />
           <Route path="/GiftCards" element={<Subscription />} />
@@ -33,8 +35,8 @@ const App = () => {
           <Route path="/Login" element={<Login />} />
           <Route path="/Admin" element={<Admin />} />
         </Routes>
-      </div>
-    </div>
+      </View>
+    </View>
   )
 
 }
