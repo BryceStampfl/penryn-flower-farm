@@ -18,7 +18,7 @@ const Product = ({ data }) => {
 
     React.useEffect(() => {
         async function getImageUrl() {
-            const url = await Storage.get(data.imageKey)
+            const url = await Storage.get('products/' + data.imageKey)
             setImageUrl(url)
         }
         if (imageUrl == '') {
@@ -28,23 +28,38 @@ const Product = ({ data }) => {
 
     return (
         <View>
-            <Card>
+            <Card            >
                 <Flex direction={{ base: 'column', medium: 'row' }} alignItems={{ base: 'center', medium: 'flex-start' }}>
-                    <Image
-                        src={imageUrl}
-                        width={{ base: '50%', medium: '100%' }}
-                    />
+                    <View
+                        // width of image for medium images
+                        minWidth={{ base: '', medium: '300px' }}
+
+                        //for mobile scales down image
+                        height={{ base: '50vh', medium: '' }}
+                    >
+                        <Image
+                            src={imageUrl}
+                            maxHeight='100%'
+                            maxWidth='100%'
+                        />
+                    </View>
+
                     <Flex
                         direction="column"
                         justifyContent='center'
                         alignItems='center'
+                        margin='2em'
                     >
                         <Heading level={5}>
                             {data.name}
                         </Heading>
-                        <Text as="span" textAlign='left'>
-                            {data.description}
-                        </Text>
+                        <View
+                        // margin={{ base: '0', medium: 'auto' }}
+                        >
+                            <Text as="span" textAlign='left'>
+                                {data.description}
+                            </Text>
+                        </View>
                         <Text>Price: ${data.price}</Text>
                         <Button variation='primary'>Purchase</Button>
                     </Flex>
@@ -52,7 +67,7 @@ const Product = ({ data }) => {
             </Card>
             <Divider
                 orientation="horizontal" />
-        </View>
+        </View >
     )
 }
 export default Product

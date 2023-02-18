@@ -1,37 +1,36 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import '../../styles.css'
-import axios from "axios";
-import photos from './photos'
 import Gallery from "react-photo-gallery";
+import { View } from '@aws-amplify/ui-react';
+import photos from './photos'
+
 
 const About = () => {
-    const [images, setImages] = React.useState()
+    const [images, setImages] = React.useState(photos)
+
+    console.log('about')
 
 
-    useEffect(() => {
-        let shouldCancel = false;
+    React.useEffect(() => {
+        async function getImageUrls() {
+            console.log("Starting get")
+            const urls = await Storage.list('gallery')
+            console.log(urls)
+            setImages(urls)
+        }
+        if (images === '') {
+            getImageUrls()
+        }
+    }, [])
 
-        const call = async () => {
-            const response = await axios.get(
-                "https://photos.app.goo.gl/WQiLgMZrQ5rWvSKt6"
-            );
-            console.log(response)
-            if (!shouldCancel && response.data && response.data.length > 0) {
-                setImages(response.data.map((image => ({
-                    src: image,
-                    height: 3,
-                    width: 4
-                }))));
-                setImages(photos)
-                console.log(response.data)
-            }
-        };
-        call();
-        return () => (shouldCancel = true);
-    }, []);
+    if (images === '') { return <div><p>gallery</p></div> }
+    else
+        return (
+            <View>
+                <p>Gallery</p>
+                <Gallery photos={photos} />
 
-    return (
-        images ? (<Gallery photos={photos} />) : null
-    )
+            </View>
+        )
 }
 export default About

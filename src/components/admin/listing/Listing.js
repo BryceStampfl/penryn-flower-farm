@@ -1,6 +1,6 @@
 import React from 'react'
 import { API, Storage } from 'aws-amplify';
-import { Button, Flex, Image, Text, TextField, View, } from '@aws-amplify/ui-react';
+import { Button, Flex, Image, Text, Divider, View, } from '@aws-amplify/ui-react';
 
 
 
@@ -9,7 +9,7 @@ const Listing = ({ product, deleteProduct }) => {
 
     React.useEffect(() => {
         async function getImageUrl() {
-            const url = await Storage.get(product.imageKey)
+            const url = await Storage.get('products/' + product.imageKey)
             setImageUrl(url)
         }
         if (imageUrl == '') {
@@ -20,23 +20,28 @@ const Listing = ({ product, deleteProduct }) => {
 
 
     return (
-        <Flex
-            key={product.id || product.name}
-            direction="row"
-            justifyContent="center"
-            alignItems="center"
-        >
-            <Image src={imageUrl} />
-            <Text as="strong" fontWeight={700}>
-                Name: {product.name}
-            </Text>
-            <Text as="span">Description: {product.description}</Text>
-            <Text as="span">Price: {product.price}</Text>
-            <Button variation="link" onClick={() => deleteProduct(product.id)}>
-                Delete product
-            </Button>
+        <View        >
+            <Flex
+                key={product.id || product.name}
+                direction="row"
+                justifyContent="center"
+                alignItems="center"
+            >
+                <Image
+                    maxHeight='50vh'
+                    src={imageUrl} />
+                <Text as="strong" fontWeight={700}>
+                    Name: {product.name}
+                </Text>
+                <Text as="span">Description: {product.description}</Text>
+                <Text as="span">Price: {product.price}</Text>
+                <Button variation="link" onClick={() => deleteProduct(product.id)}>
+                    Delete product
+                </Button>
 
-        </Flex>
+            </Flex>
+            <Divider orientation="horizontal" />
+        </View>
 
     )
 }
