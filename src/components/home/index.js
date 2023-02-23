@@ -6,14 +6,14 @@ import ImageTextOverlay from '../imageTextOverlay';
 import { Image } from '@aws-amplify/ui-react';
 
 import Garden from '../../images/Garden.jpg'
-import Woodbox from '../../images/new/IMG_0171.jpeg'
-import Patch from '../../images/new/IMG_0167.jpeg'
-import Duck from '../../images/new/IMG_0192.jpeg'
+import Woodbox from '../../images/new/jpg/IMG_0171.jpg'
+import Patch from '../../images/new/jpg/IMG_0167.jpg'
+import Duck from '../../images/new/jpg/IMG_0192.jpg'
 
 // import John from '../../images/Dad.jpg'
-import Sandra from '../../images/new/IMG_0196.JPG'
-import John from '../../images/new/IMG_0164.jpeg'
-import Flower from '../../images/new/IMG_0149.jpeg'
+import Sandra from '../../images/new/jpg/IMG_0196.jpg'
+import John from '../../images/new/jpg/IMG_0164.jpg'
+import Flower from '../../images/new/jpg/IMG_0149.jpg'
 
 
 const Home = () => {
