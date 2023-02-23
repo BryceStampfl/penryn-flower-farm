@@ -3,35 +3,52 @@ import React from 'react';
 import Jumbotron from '../jumbotron';
 import ImageTextOverlay from '../imageTextOverlay';
 
+import { Image } from '@aws-amplify/ui-react';
+
 import Garden from '../../images/Garden.jpg'
-import Dad from '../../images/Dad.jpg'
+import Woodbox from '../../images/new/IMG_0171.jpeg'
+import Patch from '../../images/new/IMG_0167.jpeg'
+import Duck from '../../images/new/IMG_0192.jpeg'
+
+// import John from '../../images/Dad.jpg'
+import Sandra from '../../images/new/IMG_0196.JPG'
+import John from '../../images/new/IMG_0164.jpeg'
+import Flower from '../../images/new/IMG_0149.jpeg'
+
+
 const Home = () => {
 
     return (
-        <div id='home'>
+        <View id='home'>
             <Jumbotron />
-
-            <Flex
-                direction={{ base: 'column', medium: 'row' }}
-                gap='0'
+            <View
+            // margin={{ medium: '0 auto 0 auto' }}
             >
-                <ImageTextOverlay imageUrl={Garden} text="Purchase Flowers " opacity={0.5} />
-                <ImageTextOverlay imageUrl={Garden} text="Subscription" />
-                <ImageTextOverlay imageUrl={Garden} text="Gift Cards" />
+                <Flex
+                    direction={{ base: 'column', medium: 'row' }}
+                    gap='1em'
+                    justifyContent={'space-between'}
+                >
+                    <ImageTextOverlay imageUrl={Patch} text="Purchase Flowers" path="/flowers" />
+                    <ImageTextOverlay imageUrl={Woodbox} text="Subscription" path="/subscription" />
+                    <ImageTextOverlay imageUrl={Duck} text="Gift Cards" path="/giftcards" />
+                </Flex>
+            </View>
 
-            </Flex>
-
-            <Flex
-                direction={{ base: 'column', medium: 'row' }}
+            <View
             >
-                <ImageTextOverlay imageUrl={Dad} text="Text 1 " />
-                <View>
-                    <ImageTextOverlay imageUrl={Garden} text="Text 1 " />
+                <Flex
+                    direction={{ base: 'column', medium: 'row' }}
+                    justifyContent={'space-between'}
+                >
+                    <Image src={John} minWidth='0' width='100%' height='100%' />
+                    <Image src={Flower} minWidth='0' width='100%' height='100%' />
+                    <Image src={Sandra} minWidth='0' width='100%' height='100%' />
 
-                </View>
 
-            </Flex>
-        </div>
+                </Flex>
+            </View>
+        </View>
     )
 }
 export default Home;

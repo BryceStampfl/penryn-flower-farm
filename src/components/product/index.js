@@ -32,7 +32,7 @@ const Product = ({ data }) => {
                 <Flex direction={{ base: 'column', medium: 'row' }} alignItems={{ base: 'center', medium: 'flex-start' }}>
                     <View
                         // width of image for medium images
-                        minWidth={{ base: '', medium: '300px' }}
+                        minWidth={{ base: '', medium: '200px' }}
 
                         //for mobile scales down image
                         height={{ base: '50vh', medium: '' }}

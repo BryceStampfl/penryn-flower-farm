@@ -20,7 +20,7 @@ const Listing = ({ product, deleteProduct }) => {
 
 
     return (
-        <View        >
+        <View>
             <Flex
                 key={product.id || product.name}
                 direction="row"
