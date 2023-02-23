@@ -64,4 +64,10 @@ const linkData = [{
     name: 'About',
     active: false,
 
+},
+{
+    path: '/Gallery',
+    name: 'Gallery',
+    active: false,
+
 }];

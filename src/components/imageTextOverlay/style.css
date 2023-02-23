@@ -1,7 +1,6 @@
 .container {
   position: relative;
   text-align: center;
-  color: white;
 }
 
 .text-block {
@@ -11,7 +10,7 @@
   transform: translate(-50%, -50%);
 
   background-color: rgba(211,211,211, 0.7);
-  padding: 1.5rem;
+  padding: 1rem;
 }
 
 .text{

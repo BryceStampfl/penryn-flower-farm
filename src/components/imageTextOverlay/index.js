@@ -1,22 +1,24 @@
 import React from 'react'
 import './style.css'
 import { Image, Text, View } from '@aws-amplify/ui-react'
+import { Link } from 'react-router-dom';
 
-export const ImageTextOverlay = ({ imageUrl, text }) => {
+
+export const ImageTextOverlay = ({ imageUrl, text, path }) => {
 
     return (
         <View
             className="container"
-            margin={{ base: 'auto', medium: '1rem' }}
-
+            marginBottom='1rem'
         >
-
-            <Image className='image' src={imageUrl} />
-            <View class="text-block">
-                <Text className='text'>
-                    {text}
-                </Text>
-            </View>
+            <Image src={imageUrl} height='100%' width='100%' />
+            <Link to={path}>
+                <View class="text-block">
+                    <Text className='text'>
+                        {text}
+                    </Text>
+                </View>
+            </Link>
 
         </View>
     )

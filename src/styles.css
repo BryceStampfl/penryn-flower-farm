@@ -4,8 +4,6 @@
     url('./fonts/Fahkwang/Fahkwang-Regular.ttf') format("truetype")
 }
 
-
-
 /* HTML OVERRIDES */
 img {
     /* image wont get bigger than its actual size ~ try width 100% for scaling */
@@ -33,13 +31,6 @@ body{
 
 }
 /* UTILITY */
-.container {
-    text-align: center;
-    margin: 0 auto;
-    width: 90%;
-    padding: 0.5rem;
-    margin-top: 0.5rem;
-}
 
 .white {
     background-color: white;
