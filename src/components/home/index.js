@@ -5,12 +5,10 @@ import ImageTextOverlay from '../imageTextOverlay';
 
 import { Image } from '@aws-amplify/ui-react';
 
-import Garden from '../../images/Garden.jpg'
 import Woodbox from '../../images/new/jpg/IMG_0171.jpg'
 import Patch from '../../images/new/jpg/IMG_0167.jpg'
 import Duck from '../../images/new/jpg/IMG_0192.jpg'
 
-// import John from '../../images/Dad.jpg'
 import Sandra from '../../images/new/jpg/IMG_0196.jpg'
 import John from '../../images/new/jpg/IMG_0164.jpg'
 import Flower from '../../images/new/jpg/IMG_0149.jpg'
