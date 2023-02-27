@@ -27,8 +27,8 @@ const App = () => {
       <Navbar />
       <View
         textAlign='center'
-        margin={{ base: '0 0 0 0', medium: '1em 1em 0 1em', xxl: '1em auto 0 auto', }}
-        maxWidth={{ medium: '1680px' }}
+        margin={{ base: '0 0 0 0', medium: '1em 1em 1em 1em', large: '1em auto 0 auto', xxl: '1em auto 0 auto', }}
+        maxWidth={{ medium: '980px' }}
       >
         <Routes>
           <Route path="/" element={<Home />} />
