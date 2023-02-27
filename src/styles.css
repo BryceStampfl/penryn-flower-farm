@@ -1,7 +1,11 @@
 @font-face {
     font-family: 'Fahkwang';
     src: local('Fahkwang'),
-    url('./fonts/Fahkwang/Fahkwang-Regular.ttf') format("truetype")
+    /* url('./fonts/Rajdhani/Rajdhani-Medium.ttf') format("truetype") */
+    url('./fonts/Cormorant/CormorantGaramond-Medium.ttf') format("truetype")
+    /* url('./fonts/Tajawal/Tajawal-Regular.ttf') format("truetype") */
+
+
 }
 
 /* HTML OVERRIDES */
@@ -32,14 +36,6 @@ body{
 }
 /* UTILITY */
 
-.white {
-    background-color: white;
-}
-
-.font{
-    font-family: "Fahkwang";
-}
-
 .border {
     border: 1px solid black;
 }
@@ -53,18 +49,6 @@ body{
     padding: 0.5rem;
 }
 
-/* BANNER */
-.banner {
-    background-color: #ededed;
-    text-align: center;
-}
-
-.logo {
-    height: auto;
-    width: 100%;
-    max-width: 20%;
-}
-
 /* NAVIGATION */
 .navbar{
     z-index: 1;
@@ -73,28 +57,7 @@ body{
     background-color: #ededed;
     position: sticky;
     top:0;
-    
 
-    /* margin-top: 0.5rem; */
-    /* margin-bottom: 1rem; */
-    padding: 0.5rem;
-
-}
-
-
-.links{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.link{
-    /* color: white; */
-    font-size: 1.1rem;
-    padding: 0 1rem ;
-    margin-left: 1rem ;
-    text-decoration: none;
-    color: black;
 }
 
 /* .link:hover{

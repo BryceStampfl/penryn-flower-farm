@@ -27,9 +27,11 @@ const Product = ({ data }) => {
     }, [])
 
     return (
-        <View>
-            <Card            >
-                <Flex direction={{ base: 'column', medium: 'row' }} alignItems={{ base: 'center', medium: 'flex-start' }}>
+        <View id='product listings'>
+            <Card padding='0px'>
+                <Flex
+                    direction={{ base: 'column', medium: 'row' }}
+                    alignItems={{ base: 'center', medium: 'flex-start' }}>
                     <View
                         // width of image for medium images
                         minWidth={{ base: '', medium: '200px' }}

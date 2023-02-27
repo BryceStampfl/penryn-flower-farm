@@ -1,6 +1,6 @@
 import React from 'react'
 import NavLink from './NavLink';
-
+import { View, Flex, Text, Collection } from '@aws-amplify/ui-react';
 
 const Navbar = () => {
     const [navLinks, setNavLinks] = React.useState(linkData)
@@ -14,7 +14,6 @@ const Navbar = () => {
         return setNavLinks(newLinks)
     }
 
-
     const links = (
         navLinks.map((link) => {
             return <NavLink
@@ -27,11 +26,20 @@ const Navbar = () => {
     )
 
     return (
-        <nav className='navbar white '>
-            <ul className='links'>
+        <View backgroundColor='#ededed'
+            paddingBottom='1rem'
+        >
+            <Flex
+                margin='0 1rem 0 1rem'
+
+                direction={{ base: 'column', small: 'row' }}
+                justifyContent='space-evenly'
+                alignContent='center'
+            >
                 {links}
-            </ul>
-        </nav>
+            </Flex >
+
+        </View>
     )
 }
 export default Navbar

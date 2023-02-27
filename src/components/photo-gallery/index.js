@@ -15,7 +15,7 @@ const PhotoGallery = () => {
             let urlList = []
             list.map((element => {
                 Storage.get(element.key).then((data) => urlList.push(
-                    { width: 3, height: 4, 'src': data }
+                    { width: 5, height: 8, 'src': data }
                 ))
             }))
             setGallery(urlList)

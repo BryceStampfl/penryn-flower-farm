@@ -24,7 +24,7 @@ const Home = () => {
             >
                 <Flex
                     direction={{ base: 'column', medium: 'row' }}
-                    gap='1em'
+                    gap={{ base: '0px', small: '1em' }}
                     justifyContent={'space-between'}
                 >
                     <ImageTextOverlay imageUrl={Patch} text="Purchase Flowers" path="/flowers" />
