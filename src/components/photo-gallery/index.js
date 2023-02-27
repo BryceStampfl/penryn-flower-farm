@@ -1,12 +1,7 @@
 import React from 'react'
 import { Storage } from 'aws-amplify';
-
-
-import '../../styles.css'
+import { View } from '@aws-amplify/ui-react';
 import Gallery from "react-photo-gallery";
-import { View, Image } from '@aws-amplify/ui-react';
-import photos from './photos'
-
 
 const PhotoGallery = () => {
     const [gallery, setGallery] = React.useState()
