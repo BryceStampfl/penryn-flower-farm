@@ -3,10 +3,9 @@ import { Image, View } from '@aws-amplify/ui-react';
 
 const Banner = () => {
     return (
-        <View id='banner' backgroundColor='#ededed'
-        >
+        <View id='banner' backgroundColor='#ededed'>
             <View
-                maxWidth={{ base: '200px', small: '300px', medium: '350px', large: '500px', xl: '600px', xxl: '800px' }}
+                maxWidth={{ base: '200px', small: '300px', medium: '300px' }}
                 textAlign='center'
                 padding='auto'
                 margin='auto'

@@ -27,11 +27,12 @@ const Navbar = () => {
 
     return (
         <View backgroundColor='#ededed'
-            paddingBottom='1rem'
+            paddingBottom='0.5rem'
         >
             <Flex
-                margin='0 1rem 0 1rem'
-
+                maxWidth={{ medium: '980px' }}
+                padding={{ base: '0px', medium: '0 2rem 0 2rem' }}
+                margin='0 auto 0 auto'
                 direction={{ base: 'column', small: 'row' }}
                 justifyContent='space-evenly'
                 alignContent='center'

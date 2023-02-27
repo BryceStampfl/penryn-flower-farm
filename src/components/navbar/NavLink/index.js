@@ -12,7 +12,7 @@ const NavLink = ({ name, path, active, onClick }) => {
             to={path}>
             <Text
                 fontFamily='Fahkwang'
-                fontSize={{ base: '1em', medium: '1.5em' }}
+                fontSize={{ base: '0.75rem', small: '1rem' }}
                 color={active ? 'green' : 'black'}
 
             >

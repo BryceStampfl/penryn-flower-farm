@@ -6,7 +6,7 @@ const Jumbotron = () => {
     return (
         <View
             textAlign="center"
-            maxWidth={{ base: '', large: '1680px' }}
+            maxWidth={{ base: '', medium: '1280px' }}
             margin={{ base: '0 auto 1rem auto', small: '0 auto 0.5rem auto' }}
         >
             <Image
