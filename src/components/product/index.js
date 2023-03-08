@@ -18,10 +18,11 @@ const Product = ({ data }) => {
 
     React.useEffect(() => {
         async function getImageUrl() {
-            const url = await Storage.get('products/' + data.imageKey)
+            const url = await Storage.get(data.imageKey)
+            console.log('url is ', url)
             setImageUrl(url)
         }
-        if (imageUrl == '') {
+        if (imageUrl === '') {
             getImageUrl()
         }
     }, [])

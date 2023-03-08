@@ -23,7 +23,7 @@ const ProductContainer = () => {
                 return product;
             })
         );
-        // console.log(productsFromAPI)
+        console.log(productsFromAPI)
         setProductData(productsFromAPI);
     }
 
