@@ -1,17 +1,15 @@
-import React from 'react'
+import React from 'react';
 import { API, Storage } from 'aws-amplify';
 import { listProducts } from '../../graphql/queries';
 import { Loader, Collection, View } from '@aws-amplify/ui-react';
+import FlowerCard from './FlowerCard';
 
-import Product from './index';
-
-const ProductContainer = () => {
+export const Flowers = () => {
     const [productData, setProductData] = React.useState(null);
 
     React.useEffect(() => {
         fetchProducts()
     }, [])
-
 
     async function fetchProducts() {
         const apiData = await API.graphql({ query: listProducts });
@@ -29,22 +27,20 @@ const ProductContainer = () => {
 
 
     if (productData === null) { return (<div><Loader size='large' /></div>) }
-    else
-        return (
-            <View>
-                <Collection
-                    items={productData}
-                    type='list'
-                    direction={'column'}
-                    justifyContent='space-between'
-                    wrap={'wrap'}
-                >
-                    {(item, index) => (
-                        <Product key={index} data={item} />
-                    )}
-                </Collection>
-
-            </View>
-        )
+    return (
+        <View>
+            <Collection
+                items={productData}
+                type='list'
+                direction={'row'}
+                justifyContent='space-between'
+                wrap={'wrap'}
+            >
+                {(item, index) => (
+                    <FlowerCard key={index} data={item} />
+                )}
+            </Collection>
+        </View>
+    )
 }
-export default ProductContainer
+export default Flowers

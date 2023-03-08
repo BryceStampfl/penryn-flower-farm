@@ -9,7 +9,7 @@ const Listing = ({ product, deleteProduct }) => {
 
     React.useEffect(() => {
         async function getImageUrl() {
-            const url = await Storage.get('products/' + product.imageKey)
+            const url = await Storage.get(product.imageKey)
             setImageUrl(url)
         }
         if (imageUrl == '') {
