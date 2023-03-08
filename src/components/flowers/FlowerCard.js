@@ -1,6 +1,6 @@
 import React from 'react'
 import { Storage } from 'aws-amplify';
-import { View, Card, Heading, Image, Text } from '@aws-amplify/ui-react'
+import { View, Card, Heading, Image, Text, Flex } from '@aws-amplify/ui-react'
 import { Link } from 'react-router-dom';
 
 import Subscription from '../subscription';
@@ -20,7 +20,7 @@ export const FlowerCard = ({ data }) => {
 
     return (
         <View
-            margin='auto'
+            margin='0 auto 0 auto'
         >
             <Card
                 maxWidth={{ base: 'auto', small: '20rem', large: '30rem' }}

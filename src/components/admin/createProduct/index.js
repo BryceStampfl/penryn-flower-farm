@@ -40,6 +40,8 @@ const CreateProduct = ({ fetchProducts }) => {
         });
         fetchProducts();
         event.target.reset();
+        setImg('')
+        setImagePreview('')
     }
 
     async function uploadImage(e) {
