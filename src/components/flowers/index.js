@@ -1,7 +1,7 @@
 import React from 'react';
 import { API, Storage } from 'aws-amplify';
 import { listProducts } from '../../graphql/queries';
-import { Loader, Collection, View, Flex } from '@aws-amplify/ui-react';
+import { Loader, Collection, View, Flex, Text } from '@aws-amplify/ui-react';
 import FlowerCard from './FlowerCard';
 
 export const Flowers = () => {
@@ -32,8 +32,18 @@ export const Flowers = () => {
             <Collection
                 items={productData}
                 type='grid'
+                isSearchable
+                searchPlaceholder="Type to search..."
+                searchNoResultsFound={
+                    <Flex justifyContent="center">
+                        <Text color="black" fontSize="1rem">
+                            Nothing found, please try again
+                        </Text>
+                    </Flex>
+                }
                 isPaginated
                 itemsPerPage={6}
+
                 templateColumns={{ base: '1fr', small: '1fr 1fr', medium: '1fr 1fr 1fr' }}
             >
                 {(item, index) => (

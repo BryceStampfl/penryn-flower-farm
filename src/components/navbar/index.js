@@ -1,9 +1,11 @@
 import React from 'react'
 import NavLink from './NavLink';
-import { View, Flex, Text, Collection } from '@aws-amplify/ui-react';
+import { Squash } from 'hamburger-react'
+import { View, Flex, Button } from '@aws-amplify/ui-react';
 
 const Navbar = () => {
     const [navLinks, setNavLinks] = React.useState(linkData)
+    const [navbarOpen, setNavbarOpen] = React.useState(false);
 
     const linkClicked = (linkName) => {
         let newLinks = [...navLinks];
@@ -11,6 +13,7 @@ const Navbar = () => {
             if (link.name === linkName) { link.active = true }
             else { link.active = false }
         })
+        setNavbarOpen(!navbarOpen)
         return setNavLinks(newLinks)
     }
 
@@ -20,7 +23,7 @@ const Navbar = () => {
                 active={link.active}
                 name={link.name}
                 path={link.path}
-                onClick={linkClicked}
+                linkClicked={linkClicked}
             />
         })
     )
@@ -28,17 +31,40 @@ const Navbar = () => {
     return (
         <View backgroundColor='#ededed'
             paddingBottom='0.5rem'
+            textAlign='center'
         >
-            <Flex
-                maxWidth={{ medium: '980px' }}
-                padding={{ base: '0px', medium: '0 2rem 0 2rem' }}
+            <View
+                display='inline-block'
                 margin='0 auto 0 auto'
-                direction={{ base: 'column', small: 'row' }}
-                justifyContent='space-evenly'
-                alignContent='center'
             >
-                {links}
-            </Flex >
+                <Button
+                    display={{ base: 'block', medium: 'none' }}
+                    onClick={() => setNavbarOpen(!navbarOpen)}
+                    padding='0px'
+                >
+                    <Squash
+                        toggled={navbarOpen}
+                        label="Show menu"
+                        size={16}
+                    />
+                </Button>
+            </View>
+
+            <View
+                display={{ base: navbarOpen ? 'block' : 'none', medium: 'block' }}
+                maxWidth={{ medium: '1280px' }}
+                margin='0 auto 0 auto'
+            >
+                <Flex
+                    padding={{ base: '0px', medium: '0 2rem 0 2rem' }}
+                    direction={{ base: 'column', medium: 'row' }}
+                    justifyContent='space-evenly'
+                    alignContent='center'
+                >
+                    {links}
+                </Flex >
+            </View>
+
 
         </View>
     )
