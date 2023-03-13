@@ -1,8 +1,9 @@
 import React from 'react';
 import { API, Storage } from 'aws-amplify';
 import { listProducts } from '../../graphql/queries';
-import { Loader, Collection, View, Flex, Text, SearchField } from '@aws-amplify/ui-react';
+import { Loader, Collection, View, Flex, Text, SearchField, Card } from '@aws-amplify/ui-react';
 import FlowerCard from './FlowerCard';
+import MyCard from './Card'
 
 export const Flowers = () => {
     const [productData, setProductData] = React.useState(null);
@@ -25,11 +26,17 @@ export const Flowers = () => {
 
     if (productData === null) { return (<div><Loader size='large' /></div>) }
     return (
-        <View>
+        <View
+            maxWidth='1580px'
+        // border='1px dashed green'
+        >
             <Collection
                 margin='0 auto 0 auto'
                 items={productData}
                 type='grid'
+                columnGap="0.5rem"
+                rowGap="0.5rem"
+
                 isSearchable
                 searchPlaceholder="Type to search..."
                 searchNoResultsFound={
@@ -45,7 +52,14 @@ export const Flowers = () => {
                 templateColumns={{ base: '1fr', small: '1fr 1fr', medium: '1fr 1fr 1fr' }}
             >
                 {(item, index) => (
-                    <FlowerCard key={index} data={item} />
+                    <View
+                    // border='1px red solid'
+                    // backgroundColor='gray'
+                    >
+
+                        <MyCard key={index} data={item} />
+                    </View>
+
 
                 )}
             </Collection>

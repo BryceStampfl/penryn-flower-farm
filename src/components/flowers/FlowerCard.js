@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 export const FlowerCard = ({ data }) => {
     return (
         <Card
+            boxShadow='2px 2px 2px 2px'
             margin='0 auto 0 auto'
             width={{ base: '15rem', small: '50vw', medium: '30vw', large: '30vw', xl: '25rem' }}
         >
@@ -24,17 +25,17 @@ export const FlowerCard = ({ data }) => {
                     />
                 </View>
 
-                <Heading fontSize={'1.25em'} fontWeight='380' fontStyle='italic'>{data.name}</Heading>
+                <Text fontSize={'1.25em'} fontWeight='380' fontStyle='italic'>{data.name}</Text>
                 <Text style={{ textAlign: 'center', fontWeight: '350', fontStyle: 'italic' }}>${data.price}</Text>
 
-                <Text
+                {/* <Text
                     overflow='hidden'
                     style={{ textAlign: 'center', fontWeight: '350' }}
                     width={{ small: 'auto', }}
 
                 >
                     {data.description.length > 160 ? data.description.substring(0, 160) + "..." : data.description}
-                </Text>
+                </Text> */}
             </Link>
         </Card>
     )
