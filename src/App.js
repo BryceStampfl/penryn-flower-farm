@@ -2,16 +2,13 @@ import React from 'react'
 import './styles.css'
 
 import {
-  BrowserRouter as Router,
   Routes,
   Route,
-  Link
 } from "react-router-dom";
 
 import { View } from '@aws-amplify/ui-react';
 
 import Banner from './components/banner';
-import ProductContainer from './components/product/ProductContainer';
 import Navbar from './components/navbar';
 import About from './components/about';
 import Login from './components/login';
@@ -20,21 +17,22 @@ import Subscription from './components/subscription';
 import Home from './components/home';
 import PhotoGallery from './components/photo-gallery';
 import Flowers from './components/flowers';
+import FlowerPage from './components/flowers/FlowerPage';
 
 const App = () => {
   return (
-    <View id='ApplicationContainer'>
+    <View id='ApplicationContainer' marginBottom='3rem'>
       <Banner />
       <Navbar />
       <View
         textAlign='center'
         margin={{ base: '0 0 0 0', medium: '1em 1em 1em 1em', large: '1em auto 0 auto', xxl: '1em auto 0 auto', }}
-        maxWidth={{ medium: '1280px' }}
+        maxWidth={{ medium: '1540px' }}
       >
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/Flowers" element={<ProductContainer />} /> */}
           <Route path="/Flowers" element={<Flowers />} />
+          <Route path="/Flowers/:id" element={<FlowerPage />} />
 
           <Route path="/Subscription" element={<Subscription />} />
           <Route path="/GiftCards" element={<Subscription />} />

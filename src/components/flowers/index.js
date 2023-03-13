@@ -1,7 +1,7 @@
 import React from 'react';
 import { API, Storage } from 'aws-amplify';
 import { listProducts } from '../../graphql/queries';
-import { Loader, Collection, View, Flex, Text } from '@aws-amplify/ui-react';
+import { Loader, Collection, View, Flex, Text, SearchField } from '@aws-amplify/ui-react';
 import FlowerCard from './FlowerCard';
 
 export const Flowers = () => {
@@ -16,20 +16,18 @@ export const Flowers = () => {
         const productsFromAPI = apiData.data.listProducts.items;
         await Promise.all(
             productsFromAPI.map(async (product) => {
-                const url = await Storage.get(product.name);
-                product.imageUrl = url;
-                return product;
+                const url = await Storage.get(product.imageKey);
+                return product.imageUrl = url;
             })
         );
-        console.log(productsFromAPI)
         setProductData(productsFromAPI);
     }
-
 
     if (productData === null) { return (<div><Loader size='large' /></div>) }
     return (
         <View>
             <Collection
+                margin='0 auto 0 auto'
                 items={productData}
                 type='grid'
                 isSearchable
@@ -56,16 +54,3 @@ export const Flowers = () => {
 }
 export default Flowers
 
-
-
-//     < Collection
-// items = { productData }
-// type = 'list'
-// direction = { 'row'}
-// justifyContent = 'space-between'
-// wrap = { 'wrap'}
-//     >
-//     {(item, index) => (
-//         <FlowerCard key={index} data={item} />
-//     )}
-//             </Collection >
