@@ -18,6 +18,7 @@ export const FlowerCard = ({ data }) => {
                     height={{ medium: '20vh', large: '22vh', xl: '25vh' }}
                 >
                     <Image
+                        objectFit='cover'
                         src={data.imageUrl}
                         maxHeight='100%'
                         maxWidth='100%'
