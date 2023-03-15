@@ -6,7 +6,6 @@ import { BrowserRouter } from 'react-router-dom'
 import { Amplify } from 'aws-amplify';
 import awsconfig from './aws-exports';
 
-import './fonts/Fahkwang/Fahkwang-Regular.ttf'
 
 // Amplify.Logger.LOG_LEVEL = 'DEBUG';
 Amplify.configure(awsconfig)

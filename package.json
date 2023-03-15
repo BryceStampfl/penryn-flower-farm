@@ -5,6 +5,7 @@
   "dependencies": {
     "@aws-amplify/ui-react": "^4.3.2",
     "@aws-sdk/util-base64": "^3.208.0",
+    "@paypal/react-paypal-js": "^7.8.2",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",

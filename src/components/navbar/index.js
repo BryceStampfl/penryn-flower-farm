@@ -29,12 +29,12 @@ const Navbar = () => {
     )
 
     return (
-        <View backgroundColor='#ededed'
+        <View backgroundColor='#F7F7F7'
             paddingBottom='0.5rem'
             textAlign='center'
         >
             <View
-                display='inline-block'
+                display={{ base: 'inline-block', medium: 'block' }}
                 margin='0 auto 0 auto'
             >
                 <Button

@@ -1,7 +1,7 @@
 import React from 'react';
 import { API, Storage } from 'aws-amplify';
 import { listProducts } from '../../graphql/queries';
-import { Loader, Collection, View, Flex, Text, SearchField } from '@aws-amplify/ui-react';
+import { Loader, Collection, View, Flex, Text, Heading } from '@aws-amplify/ui-react';
 import FlowerCard from './FlowerCard';
 
 export const Flowers = () => {
@@ -41,12 +41,11 @@ export const Flowers = () => {
                 }
                 isPaginated
                 itemsPerPage={6}
-
                 templateColumns={{ base: '1fr', small: '1fr 1fr', medium: '1fr 1fr 1fr' }}
             >
                 {(item, index) => (
-                    <FlowerCard key={index} data={item} />
 
+                    <FlowerCard key={index} data={item} />
                 )}
             </Collection>
         </View >
