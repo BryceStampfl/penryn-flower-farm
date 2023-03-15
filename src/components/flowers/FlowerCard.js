@@ -1,21 +1,25 @@
 import React from 'react'
-import { View, Card, Heading, Image, Text } from '@aws-amplify/ui-react'
+import { View, Card, Flex, Image, Text } from '@aws-amplify/ui-react'
 import { Link } from 'react-router-dom';
 
 export const FlowerCard = ({ data }) => {
     return (
         <Card
+            fontFamily='GentiumBasic'
             margin='0 auto 0 auto'
-            width={{ base: '15rem', small: '50vw', medium: '30vw', large: '30vw', xl: '25rem' }}
+            width={{ base: '13rem', small: '50vw', medium: '30vw', large: '30vw', xl: '25rem' }}
         >
             <Link
                 to={'/Flowers/' + data.name}
                 state={{ data: data }}
                 style={{ textDecoration: 'none' }}>
                 <View
+                    border='1px solid #D3D3D3'
+                    borderRadius="0.5rem"
+
                     margin='0 auto 0 auto'
-                    width={{ base: 'auto', small: '30vw', medium: '15vw' }}
-                    height={{ medium: '20vh', large: '22vh', xl: '25vh' }}
+                    width={{ base: 'auto', small: '35vw', medium: '25vw', large: '18vw', xxl: '16vw' }}
+                // height='50vh'
                 >
                     <Image
                         objectFit='cover'
@@ -23,21 +27,27 @@ export const FlowerCard = ({ data }) => {
                         maxHeight='100%'
                         maxWidth='100%'
                     />
+
+                    <View
+                        // margin='0 auto 0 auto'
+                        padding='0.25rem'
+                    >
+                        <Flex
+                            justifyContent='space-between'
+                            alignItems='center'
+                        >
+                            <Text textAlign='left' fontSize='1.5rem' fontWeight='100' display='inline' color='#333333'
+                                style={{ wordWrap: 'break-word', width: '75%' }}
+                            >{data.name}</Text>
+                            <Text fontSize='1.25rem' textAlign='center' fontWeight='300' >${data.price}</Text>
+
+                        </Flex>
+
+                    </View>
                 </View>
 
-                <Heading fontSize={'1.25em'} fontWeight='380' fontStyle='italic'>{data.name}</Heading>
-                <Text style={{ textAlign: 'center', fontWeight: '350', fontStyle: 'italic' }}>${data.price}</Text>
-
-                <Text
-                    overflow='hidden'
-                    style={{ textAlign: 'center', fontWeight: '350' }}
-                    width={{ small: 'auto', }}
-
-                >
-                    {data.description.length > 160 ? data.description.substring(0, 160) + "..." : data.description}
-                </Text>
             </Link>
-        </Card>
+        </Card >
     )
 }
 export default FlowerCard

@@ -1,11 +1,13 @@
 @font-face {
-    font-family: 'Fahkwang';
-    src: local('Fahkwang'),
-    /* url('./fonts/Rajdhani/Rajdhani-Medium.ttf') format("truetype") */
+    font-family: 'Cormorant';
+    src: local('Cormorant'),
     url('./fonts/Cormorant/CormorantGaramond-Medium.ttf') format("truetype")
-    /* url('./fonts/Tajawal/Tajawal-Regular.ttf') format("truetype") */
+}
 
-
+@font-face {
+    font-family: 'GentiumBasic';
+    src: local('GentiumBasic'),
+    url('./fonts/GentiumBasic/SourceSerifPro-Regular.ttf') format("truetype")
 }
 
 /* HTML OVERRIDES */

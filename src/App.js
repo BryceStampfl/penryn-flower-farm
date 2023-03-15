@@ -18,6 +18,7 @@ import Home from './components/home';
 import PhotoGallery from './components/photo-gallery';
 import Flowers from './components/flowers';
 import FlowerPage from './components/flowers/FlowerPage';
+import Purchase from './components/purchase';
 
 const App = () => {
   return (
@@ -26,13 +27,16 @@ const App = () => {
       <Navbar />
       <View
         textAlign='center'
-        margin={{ base: '0 0 0 0', medium: '1em 1em 1em 1em', large: '1em auto 0 auto', xxl: '1em auto 0 auto', }}
-        maxWidth={{ medium: '1540px' }}
+        margin={{ base: '1rem 0 0 0', medium: '1em 1em 1em 1em', large: '1em auto 0 auto', xxl: '1em auto 0 auto', }}
+        maxWidth={{ medium: '1280px' }}
       >
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Flowers" element={<Flowers />} />
           <Route path="/Flowers/:id" element={<FlowerPage />} />
+
+          <Route path="/Purchase/" element={<Purchase />} />
+
 
           <Route path="/Subscription" element={<Subscription />} />
           <Route path="/GiftCards" element={<Subscription />} />
