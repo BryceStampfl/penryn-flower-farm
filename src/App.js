@@ -22,13 +22,14 @@ import Purchase from './components/purchase';
 
 const App = () => {
   return (
-    <View id='ApplicationContainer' marginBottom='3rem'>
+    <View id='ApplicationContainer' marginBottom='3rem'
+    >
       <Banner />
       <Navbar />
       <View
         textAlign='center'
-        margin={{ base: '1rem 0 0 0', medium: '1em 1em 1em 1em', large: '1em auto 0 auto', xxl: '1em auto 0 auto', }}
-        maxWidth={{ medium: '1280px' }}
+        margin={{ base: '0 0 0 0', medium: '1em 1em 1em 1em', large: '1em auto 0 auto', xxl: '1em auto 0 auto', }}
+        maxWidth={{ medium: '1540px' }}
       >
         <Routes>
           <Route path="/" element={<Home />} />

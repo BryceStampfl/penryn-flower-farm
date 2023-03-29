@@ -11,9 +11,7 @@ const Jumbotron = () => {
             <Image
                 textAlign="center"
                 src={Garden}
-
                 maxHeight='100%'
-
                 maxWidth='100%'
             />
         </View>
