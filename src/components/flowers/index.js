@@ -42,7 +42,7 @@ export const Flowers = () => {
                 isPaginated
                 itemsPerPage={6}
                 templateRows='1fr'
-                templateColumns={{ base: '1fr', medium: '1fr 1fr 1fr' }}
+                templateColumns={{ base: '1fr', medium: '1fr 1fr 1fr ' }}
             >
                 {(item, index) => (
 
