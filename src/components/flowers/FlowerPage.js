@@ -56,7 +56,7 @@ export const FlowerPage = () => {
                         >
                             <Text style={{
                                 textAlign: 'center', fontWeight: '350', fontSize: '2rem', color: '#666666'
-                            }}>${data.price}</Text>
+                            }}>${data.price} per bundle</Text>
 
                             < Text style={{
                                 borderTop: '1px solid #CCCCCC',

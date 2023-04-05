@@ -12,7 +12,7 @@ const Banner = () => {
                 padding='auto'
                 margin='auto'
             >
-                <Image src='/logo-large.png' />
+                <Image src='/logo.png' />
             </View>
         </View>
     )
