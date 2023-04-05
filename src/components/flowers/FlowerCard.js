@@ -7,7 +7,6 @@ export const FlowerCard = ({ data }) => {
         <Card
             fontFamily='GentiumBasic'
             margin='0 auto 0 auto'
-            width={{ base: '13rem', small: '50vw', medium: '30vw', large: '30vw', xl: '25rem' }}
         >
             <Link
                 to={'/Flowers/' + data.name}
@@ -16,21 +15,18 @@ export const FlowerCard = ({ data }) => {
                 <View
                     border='1px solid #D3D3D3'
                     borderRadius="0.5rem"
-
-                    margin='0 auto 0 auto'
-                    width={{ base: 'auto', small: '35vw', medium: '25vw', large: '18vw', xxl: '16vw' }}
-                // height='50vh'
                 >
                     <Image
-                        objectFit='cover'
+                        objectFit='fill'
                         src={data.imageUrl}
-                        maxHeight='100%'
-                        maxWidth='100%'
+                        // maxWidth='100%'
+                        height={{ base: '20rem', medium: '13rem', large: '20rem' }}
+                        width={{ base: '20rem', medium: '13rem', large: '20rem' }}
                     />
-
                     <View
-                        // margin='0 auto 0 auto'
                         padding='0.25rem'
+                        width={{ base: '20rem', medium: '13rem', large: '20rem' }}
+
                     >
                         <Flex
                             justifyContent='space-between'
