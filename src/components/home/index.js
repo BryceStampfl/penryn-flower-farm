@@ -22,7 +22,7 @@ const Home = () => {
                     gap={{ base: '0px', small: '1em' }}
                     justifyContent={'space-between'}
                 >
-                    <ImageTextOverlay imageUrl={Patch} text="Purchase Flowers" path="/flowers" />
+                    <ImageTextOverlay imageUrl={Patch} text="Purchase Flowers" path="/Flowers" />
                     <ImageTextOverlay imageUrl={Woodbox} text="Subscription" path="/subscription" />
                     <ImageTextOverlay imageUrl={Duck} text="Gift Cards" path="/giftcards" />
                 </Flex>

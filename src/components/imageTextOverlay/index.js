@@ -4,7 +4,7 @@ import { Image, Text, View } from '@aws-amplify/ui-react'
 import { Link } from 'react-router-dom';
 
 
-export const ImageTextOverlay = ({ imageUrl, text, path }) => {
+export const ImageTextOverlay = ({ imageUrl, text, path, textSize }) => {
 
     return (
         <View
@@ -14,7 +14,9 @@ export const ImageTextOverlay = ({ imageUrl, text, path }) => {
             <Image src={imageUrl} height='100%' width='100%' />
             <Link to={path}>
                 <View class="text-block">
-                    <Text className='text'>
+                    <Text className='text'
+                        fontSize={textSize}
+                    >
                         {text}
                     </Text>
                 </View>

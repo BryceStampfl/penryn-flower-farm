@@ -1,0 +1,19 @@
+.container {
+  position: relative;
+  text-align: center;
+}
+
+.text-block {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: #F7F7F7;
+  padding: 1rem;
+}
+
+.text{
+    font-size: 1.25rem;
+    color:black
+}

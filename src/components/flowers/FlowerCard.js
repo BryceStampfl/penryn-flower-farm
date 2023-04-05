@@ -20,12 +20,12 @@ export const FlowerCard = ({ data }) => {
                         objectFit='fill'
                         src={data.imageUrl}
                         // maxWidth='100%'
-                        height={{ base: '20rem', medium: '13rem', large: '20rem' }}
-                        width={{ base: '20rem', medium: '13rem', large: '20rem' }}
+                        height={{ base: '20rem', medium: '13rem', large: '20rem', xl: '25rem' }}
+                        width={{ base: '20rem', medium: '13rem', large: '20rem', xl: '25rem' }}
                     />
                     <View
                         padding='0.25rem'
-                        width={{ base: '20rem', medium: '13rem', large: '20rem' }}
+                        width={{ base: '20rem', medium: '13rem', large: '20rem', xl: '25rem' }}
 
                     >
                         <Flex
@@ -47,52 +47,3 @@ export const FlowerCard = ({ data }) => {
     )
 }
 export default FlowerCard
-
-
-
-// Cards fit all sizes but are longer, issue with horizontal or longer images cutting text off even thought i want all pictures same size,
-// also resizing makes leftmost elements size down due to size of longer image
-
-//     < Card
-// id = 'card container'
-// margin = '0 auto 0 auto'
-// maxWidth = {{ base: '15rem', small: 'auto', medium: '25rem' }}
-// width = {{ small: '30rem', medium: 'auto' }}  //needed so text sits and doesnt overflow and each box is same size
-//         // maxHeight={{ base: '', small: '25rem', medium: '', large: '' }}
-//         >
-//     <Link
-//         id='link'
-//         to={'/Flowers/' + data.name}
-//         state={{ data: data }}
-//         style={{ textDecoration: 'none' }}>
-//         <View
-//             id='image container'
-//             maxWidth={{ base: '15rem', small: 'auto', medium: '25rem' }}
-//             maxHeight={{ medium: '50rem' }}
-
-
-//         >
-//             <Image
-//                 objectFit={{ small: 'scale-down' }}
-//                 src={data.imageUrl}
-//                 maxHeight='100%'
-//                 maxWidth='100%'
-
-//             // maxWidth={{ base: 'auto', small: '15rem', medium: '20rem', large: '25rem' }}
-
-//             />
-//         </View>
-
-//         <Heading fontSize={'1.25em'} fontWeight='380' fontStyle='italic'>{data.name}</Heading>
-//         <Text style={{ textAlign: 'center', fontWeight: '350', fontStyle: 'italic' }}>${data.price}</Text>
-
-//         <Text
-//             overflow='hidden'
-//             style={{ textAlign: 'left', fontWeight: '350' }}
-//             width={{ small: 'auto', }}
-
-//         >
-//             {data.description.length > 80 ? data.description.substring(0, 80) + "..." : data.description}
-//         </Text>
-//     </Link>
-//         </Card >
