@@ -2,8 +2,9 @@ import React from 'react';
 import { API, Storage } from 'aws-amplify';
 import { listProducts } from '../../graphql/queries';
 import { Loader, Collection, View, Flex, Text, Divider, Image } from '@aws-amplify/ui-react';
+import { Link } from 'react-router-dom';
 import FlowerCard from './FlowerCard';
-
+import '../imageTextOverlay/style.css'
 
 import subscription from '../../images/basketSub.jpg'
 import giftcard from '../../images/giftcard.jpg'
@@ -30,15 +31,15 @@ export const Flowers = () => {
 
     if (productData === null) { return (<div><Loader size='large' /></div>) }
     return (
-        <View
-        // border='1px solid gray'
-        >
+        <View>
             <View  >
                 <Flex justifyContent='space-around' maxWidth={{ medium: '1540px' }}
-                // backgroundColor='#F7F7F7'
                 >
                     <div style={{ width: 'auto', margin: '0 auto 0 auto' }}>
-                        <Image src={subscription} />
+                        <Link to='/Subscription'>
+                            <Image src={subscription} />
+                        </Link>
+
                     </div>
 
                     <div style={{ width: 'auto', margin: '0 auto 0 auto' }}>
@@ -46,7 +47,6 @@ export const Flowers = () => {
                     </div>
                 </Flex>
             </View>
-
 
 
             <View>
