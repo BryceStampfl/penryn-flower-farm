@@ -55,47 +55,42 @@ export const FlowerPage = ({ addToCart }) => {
                     />
                 </View>
                 <View
-                    width='30rem'
+                    border='1px solid #CCCCCC'
+                    margin='0'
                 >
+                    <Heading
+                        padding='0.75rem'
+                        fontSize={'2rem'}
+                        fontWeight='350'
+                        color='#666666'
+                        style={{ wordWrap: 'break-word' }}
+                    >{data.name}</Heading>
                     <View
-                        border='1px solid #CCCCCC'
-                        margin='0'
+                        backgroundColor='#F7F7F7'
+                        style={{ borderTop: '1px solid #CCCCCC' }}
                     >
-                        <Heading
-                            padding='0.75rem'
-                            fontSize={'2rem'}
-                            fontWeight='350'
-                            color='#666666'
-                            style={{ wordWrap: 'break-word' }}
-                        >{data.name}</Heading>
-                        <View
-                            backgroundColor='#F7F7F7'
-                            style={{ borderTop: '1px solid #CCCCCC' }}
-                        >
-                            <Text style={{
-                                textAlign: 'center', fontWeight: '350', fontSize: '2rem', color: '#666666'
-                            }}>${data.price} per bundle</Text>
+                        <Text style={{
+                            textAlign: 'center', fontWeight: '350', fontSize: '2rem', color: '#666666'
+                        }}>${data.price} per bundle</Text>
 
-                            < Text style={{
-                                borderTop: '1px solid #CCCCCC',
-                                textAlign: 'center',
-                                fontWeight: '350',
-                                padding: '1rem',
-                                wordWrap: 'break-word'
-                            }}>{data.description}</Text>
-                        </View>
-                        <StepperField
-                            value={value}
-                            defaultValue={0}
-                            onStepChange={handleOnStepChange}
-                            size='large'
-                        />
-                        <Flex gap='0px'>
-                            <Button backgroundColor='blue' color='white' isFullWidth={true} onClick={purchasePressed}>Add to Cart</Button>
-                            <Button backgroundColor='green' color='white' isFullWidth={true}>Purchase</Button>
-
-                        </Flex>
+                        < Text style={{
+                            borderTop: '1px solid #CCCCCC',
+                            textAlign: 'center',
+                            fontWeight: '350',
+                            padding: '1rem',
+                            wordWrap: 'break-word'
+                        }}>{data.description}</Text>
                     </View>
+                    <StepperField
+                        value={value}
+                        defaultValue={0}
+                        onStepChange={handleOnStepChange}
+                        size='large'
+                    />
+                    <Flex gap='0px' >
+                        <Button fontSize='1.15rem' backgroundColor='#ffff7f' color='#36454F' isFullWidth={true} onClick={purchasePressed}>Add to Cart</Button>
+                        <Button fontSize='1.15rem' backgroundColor='#FFBF00' color='#36454F' isFullWidth={true}>Purchase</Button>
+                    </Flex>
                 </View>
             </Flex >
 

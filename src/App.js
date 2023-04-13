@@ -14,10 +14,11 @@ const App = () => {
 
 
   return (
-    <View id='ApplicationContainer' marginBottom='3rem'>
+    <View id='ApplicationContainer'>
       <TopNavbar />
       <Banner />
       <Navbar />
+
       <View
         textAlign='center'
         margin={{ base: '0 0 0 0', medium: '1em 1em 1em 1em', large: '1em auto 0 auto', xxl: '1em auto 0 auto', }}
@@ -26,7 +27,6 @@ const App = () => {
 
       >
         <NavigationRoutes />
-        <Contact />
 
 
         <Toaster
@@ -38,6 +38,7 @@ const App = () => {
 
         />
       </View>
+      <Contact />
     </View>
   )
 
