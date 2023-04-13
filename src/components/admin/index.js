@@ -1,7 +1,8 @@
 import { API } from 'aws-amplify';
 import React, { useState, useEffect } from 'react'
-import { Heading, Tabs, TabItem, View, } from '@aws-amplify/ui-react';
+import { Heading, Tabs, TabItem, View, withAuthenticator } from '@aws-amplify/ui-react';
 import { listProducts } from "../../graphql/queries";
+
 import {
     createProduct as createProductMutation,
     deleteProduct as deleteProductMutation,
@@ -55,9 +56,8 @@ const Admin = () => {
                     </View>
                 </TabItem>
             </Tabs>
-
-
         </View>
+
     )
 }
-export default Admin
+export default withAuthenticator(Admin);

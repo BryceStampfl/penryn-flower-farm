@@ -1,7 +1,7 @@
 import React from 'react'
-import { useLocation, Link } from "react-router-dom";
-import { View, Flex, Heading, Image, Text, Button } from '@aws-amplify/ui-react'
-
+import { useLocation } from "react-router-dom";
+import { View, Flex, Heading, Image, Text, Button, StepperField } from '@aws-amplify/ui-react'
+import toast, { Toaster } from 'react-hot-toast';
 
 
 /*
@@ -10,9 +10,27 @@ border - 211 211 211 #D3D3D3
 text heavy #666666
 text light #hex 999999
 */
-export const FlowerPage = () => {
+export const FlowerPage = ({ addToCart }) => {
+    const [value, setValue] = React.useState(0);
+
     const location = useLocation()
     const data = location.state.data
+
+    const handleOnStepChange = (newValue) => {
+        setValue(newValue);
+    };
+
+    const purchasePressed = () => {
+        toast.success(`Added ${value} bundles to the cart!`, {
+            position: 'top-center',
+
+        })
+
+        addToCart({
+            product: { data },
+            quantity: { value },
+        })
+    }
 
     return (
         <View
@@ -66,17 +84,18 @@ export const FlowerPage = () => {
                                 wordWrap: 'break-word'
                             }}>{data.description}</Text>
                         </View>
+                        <StepperField
+                            value={value}
+                            defaultValue={0}
+                            onStepChange={handleOnStepChange}
+                            size='large'
+                        />
+                        <Flex gap='0px'>
+                            <Button backgroundColor='blue' color='white' isFullWidth={true} onClick={purchasePressed}>Add to Cart</Button>
+                            <Button backgroundColor='green' color='white' isFullWidth={true}>Purchase</Button>
 
-                        <Link
-                            to={'/Purchase/'}
-                            state={{ data: data }}
-                            style={{ textDecoration: 'none' }}>
-                            <Button backgroundColor='green' color='white' isFullWidth={true}
-                            >Purchase</Button>
-                        </Link>
+                        </Flex>
                     </View>
-
-
                 </View>
             </Flex >
 
