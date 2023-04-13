@@ -1,21 +1,24 @@
 import "@aws-amplify/ui-react/styles.css";
-import {
-    withAuthenticator,
-    Button,
-    Heading,
-    View,
-    Card,
-} from "@aws-amplify/ui-react";
+import { View, Authenticator } from "@aws-amplify/ui-react";
 
-function Login({ signOut }) {
+
+function Login() {
     return (
-        <View className="App">
-            <Card>
-                <Heading level={1}>We now have Auth!</Heading>
-            </Card>
-            <Button onClick={signOut}>Sign Out</Button>
+        <View
+            maxWidth={{ medium: '1540px' }}
+        >
+            <Authenticator
+                socialProviders={['facebook', 'google']}
+            >
+                {({ signOut, user }) => (
+                    <main>
+                        <button onClick={signOut}>Sign out</button>
+                    </main>
+                )}
+            </Authenticator>
         </View>
+
     );
 }
 
-export default withAuthenticator(Login);
+export default Login;

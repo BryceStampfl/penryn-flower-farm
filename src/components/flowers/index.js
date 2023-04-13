@@ -20,6 +20,7 @@ export const Flowers = () => {
     async function fetchProducts() {
         const apiData = await API.graphql({ query: listProducts });
         const productsFromAPI = apiData.data.listProducts.items;
+
         await Promise.all(
             productsFromAPI.map(async (product) => {
                 const url = await Storage.get(product.imageKey);
