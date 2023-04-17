@@ -13,8 +13,8 @@ export const FlowerCard = ({ data }) => {
                 state={{ data: data }}
                 style={{ textDecoration: 'none' }}>
                 <View
-                    border='1px solid #D3D3D3'
-                    borderRadius="0.5rem"
+                // border='1px solid #D3D3D3'
+                // borderRadius="0.5rem"
                 >
                     <Image
                         objectFit='fill'
@@ -29,10 +29,12 @@ export const FlowerCard = ({ data }) => {
 
                     >
                         <Flex
-                            justifyContent='space-between'
+                            direction='column'
+                            // justifyContent='center'
+                            // justifyContent='space-between'
                             alignItems='center'
                         >
-                            <Text textAlign='left' fontSize='1.5rem' fontWeight='100' display='inline' color='#333333'
+                            <Text textAlign='center' fontSize='1.5rem' fontWeight='100' display='inline' color='#333333'
                                 style={{ wordWrap: 'break-word', width: '75%' }}
                             >{data.name}</Text>
                             <Text fontSize='1.25rem' textAlign='center' fontWeight='300' >${data.price}</Text>
