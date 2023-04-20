@@ -13,12 +13,30 @@ import FlowerPage from '../flowers/FlowerPage';
 import Purchase from '../purchase';
 
 
-const NavigationRoutes = () => {
+const NavigationRoutes = ({ setCartSize }) => {
     const [cart, setCart] = React.useState([])
 
     const addToCart = (data) => {
-        setCart([...cart, data])
-        console.log(cart)
+        let index = cart.findIndex(ele => ele.product.data.id === data.product.data.id)
+        if (index !== -1) {
+            let temp = [...cart]
+            temp[index] = {
+                ...temp[index],
+                quantity: {
+                    ...temp[index].quantity,
+                    value: data.quantity.value + temp[index].quantity.value,
+                },
+            };
+            setCart(temp)
+            setCartSize(cart.length)
+
+        }
+        else {
+            setCart([...cart, data])
+            setCartSize(cart.length)
+
+        }
+        setCartSize(cart.length)
     }
 
     return (

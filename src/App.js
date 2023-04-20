@@ -10,14 +10,13 @@ import Navbar from './components/navbar'
 import Contact from './components/contact';
 
 const App = () => {
-  const [itemsInCart, setItemsInCart] = React.useState(0)
-
+  const [cartSize, setCartSize] = React.useState(0)
 
   return (
     <View id='ApplicationContainer'>
       <TopNavbar />
       <Banner />
-      <Navbar />
+      <Navbar cartSize={cartSize} />
 
       <View
         textAlign='center'
@@ -26,7 +25,7 @@ const App = () => {
         maxWidth={{ medium: '1280px' }}
 
       >
-        <NavigationRoutes />
+        <NavigationRoutes setCartSize={setCartSize} />
 
 
         <Toaster
