@@ -14,10 +14,8 @@ export const Purchase = ({ cart }) => {
     const total = () => {
         let result = 0;
         cart.map((cartItem) => {
-            console.log('quantity is', cartItem.quantity.value + '  price is', cartItem.product.data.price)
             result += cartItem.quantity.value * cartItem.product.data.price
         })
-        console.log('total', result)
         return result;
     }
 
