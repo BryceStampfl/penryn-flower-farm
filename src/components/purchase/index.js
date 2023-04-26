@@ -12,10 +12,12 @@ export const Purchase = ({ cart }) => {
     // const data = location.state.data
 
     const total = () => {
-        let result;
+        let result = 0;
         cart.map((cartItem) => {
-            result += cartItem.quantity * cartItem.product.data.price
+            console.log('quantity is', cartItem.quantity.value + '  price is', cartItem.product.data.price)
+            result += cartItem.quantity.value * cartItem.product.data.price
         })
+        console.log('total', result)
         return result;
     }
 
@@ -34,7 +36,7 @@ export const Purchase = ({ cart }) => {
 
             {cartCards}
             <Divider />
-            <Text fontSize='2rem'>Total is: ${total}</Text>
+            <Text fontSize='2rem'>Total is: ${total()}</Text>
 
             <PayPalScriptProvider options={{ "client-id": "test" }}>
                 <PayPalButtons style={{ layout: "horizontal" }} />
@@ -60,6 +62,7 @@ const FlowerCard = ({ flower }) => {
                         <Flex direction='column' alignItems='flex-start'>
                             <View>
                                 <Heading level={5}>{flower.product.data.name}</Heading>
+                                <Text>Price:$ {flower.product.data.price} (per bundle)</Text>
                                 <Text>{flower.product.data.description}</Text>
                             </View>
                             <View>
