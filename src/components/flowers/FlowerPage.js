@@ -16,6 +16,7 @@ export const FlowerPage = ({ addToCart }) => {
     const location = useLocation()
     const data = location.state.data
     const navigate = useNavigate();
+    console.log(data)
 
     const handleOnStepChange = (newValue) => {
         setValue(newValue);

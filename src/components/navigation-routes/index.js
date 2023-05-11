@@ -13,10 +13,11 @@ import FlowerPage from '../flowers/FlowerPage';
 import Purchase from '../purchase';
 
 
-const NavigationRoutes = ({ setCartSize }) => {
+const NavigationRoutes = () => {
     const [cart, setCart] = React.useState([])
 
     const addToCart = (data) => {
+        console.log(data)
         let index = cart.findIndex(ele => ele.product.data.id === data.product.data.id)
         if (index !== -1) {
             let temp = [...cart]
@@ -28,15 +29,10 @@ const NavigationRoutes = ({ setCartSize }) => {
                 },
             };
             setCart(temp)
-            setCartSize(cart.length)
-
         }
         else {
             setCart([...cart, data])
-            setCartSize(cart.length)
-
         }
-        setCartSize(cart.length)
     }
 
     return (
@@ -45,7 +41,7 @@ const NavigationRoutes = ({ setCartSize }) => {
             <Route path="/Flowers" element={<Flowers />} />
             <Route path="/Flowers/:id" element={<FlowerPage addToCart={addToCart} />} />
             <Route path="/Purchase/" element={<Purchase cart={cart} />} />
-            <Route path="/Subscription" element={<Subscription />} />
+            <Route path="/Subscription" element={<Subscription addToCart={addToCart} />} />
             <Route path="/GiftCards" element={<Subscription />} />
             <Route path="/About" element={<About />} />
             <Route path="/Gallery" element={<PhotoGallery />} />

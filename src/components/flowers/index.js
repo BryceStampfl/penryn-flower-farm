@@ -28,6 +28,7 @@ export const Flowers = () => {
             })
         );
         setProductData(productsFromAPI);
+        console.log(productsFromAPI)
     }
 
     if (productData === null) { return (<div><Loader size='large' /></div>) }
