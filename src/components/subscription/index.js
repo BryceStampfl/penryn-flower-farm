@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Image, Text, Button, Flex, Grid, Heading, Divider } from '@aws-amplify/ui-react'
+import { View, Image, Text, Button, Flex, Heading } from '@aws-amplify/ui-react'
 import { useLocation, useNavigate } from "react-router-dom";
 
 import './style.css'
@@ -46,13 +46,13 @@ const Subscription = ({ addToCart }) => {
             maxWidth='1540px'
             position='relative'
         >
-            <View backgroundColor='#f7f7f7' >
+            <View backgroundColor='' >
                 <Heading level={1} fontSize={50} marginBottom='1rem' fontStyle='italic'>Bouquet Subscription</Heading>
 
                 <Flex direction={{ base: 'column', medium: 'row' }}>
                     <Image src={basket} width={{ base: 'auto', medium: '50%' }} />
                     <View
-                        backgroundColor='#f7f7f7'
+                        backgroundColor=''
                     >
                         <Flex>
                             <Text fontSize={20}>

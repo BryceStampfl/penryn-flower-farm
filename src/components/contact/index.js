@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Flex, Heading, Text, Button } from '@aws-amplify/ui-react'
+import { View, Flex, Heading, Text, Divider } from '@aws-amplify/ui-react'
 import { SocialIcon } from 'react-social-icons';
 
 const Contact = () => {
@@ -14,6 +14,7 @@ const Contact = () => {
                 direction='column'
                 alignItems="center"
             >
+                <Divider size='small' />
 
                 <Heading level={1}>Contact Us!</Heading>
                 <Flex>

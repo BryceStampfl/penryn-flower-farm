@@ -1,6 +1,6 @@
 import React from 'react'
 import './styles.css'
-import { View } from '@aws-amplify/ui-react';
+import { Divider, View } from '@aws-amplify/ui-react';
 import { Toaster } from 'react-hot-toast';
 
 import NavigationRoutes from './components/navigation-routes/'
@@ -16,7 +16,7 @@ const App = () => {
       <TopNavbar />
       <Banner />
       <Navbar />
-
+      <Divider size='small' />
       <View
         textAlign='center'
         margin={{ base: '0 0 0 0', medium: '1em 1em 1em 1em', large: '1em auto 0 auto', xxl: '1em auto 0 auto', }}
