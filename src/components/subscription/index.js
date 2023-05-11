@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Image, Text, Button, Flex, Grid, Heading, Divider } from '@aws-amplify/ui-react'
+import { View, Image, Text, Button, Flex, Heading } from '@aws-amplify/ui-react'
 import { useLocation, useNavigate } from "react-router-dom";
 
 import './style.css'
