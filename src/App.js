@@ -10,8 +10,6 @@ import Navbar from './components/navbar'
 import Contact from './components/contact';
 
 const App = () => {
-  const [itemsInCart, setItemsInCart] = React.useState(0)
-
 
   return (
     <View id='ApplicationContainer'>
@@ -24,10 +22,8 @@ const App = () => {
         margin={{ base: '0 0 0 0', medium: '1em 1em 1em 1em', large: '1em auto 0 auto', xxl: '1em auto 0 auto', }}
         // maxWidth={{ medium: '1540px' }}
         maxWidth={{ medium: '1280px' }}
-
       >
         <NavigationRoutes />
-
 
         <Toaster
           toastOptions={{

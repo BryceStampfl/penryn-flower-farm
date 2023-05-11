@@ -105,4 +105,11 @@ const linkData = [{
     name: 'Gallery',
     active: false,
 
-}];
+}, {
+    path: '/Purchase',
+    name: 'Cart',
+    active: false,
+
+},
+
+];

@@ -13,8 +13,8 @@ export const ImageTextOverlay = ({ imageUrl, text, path, textSize }) => {
         >
             <Image src={imageUrl} height='100%' width='100%' />
             <Link to={path}>
-                <View class="text-block">
-                    <Text className='text'
+                <View className="text-block">
+                    <Text className='text' backgroundColor='#F7F7F7' padding='0.25rem'
                         fontSize={textSize}
                     >
                         {text}

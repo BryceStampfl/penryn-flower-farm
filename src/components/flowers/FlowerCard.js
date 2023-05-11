@@ -12,10 +12,7 @@ export const FlowerCard = ({ data }) => {
                 to={'/Flowers/' + data.name}
                 state={{ data: data }}
                 style={{ textDecoration: 'none' }}>
-                <View
-                    border='1px solid #D3D3D3'
-                    borderRadius="0.5rem"
-                >
+                <View>
                     <Image
                         objectFit='fill'
                         src={data.imageUrl}
@@ -28,20 +25,14 @@ export const FlowerCard = ({ data }) => {
                         width={{ base: '20rem', medium: '13rem', large: '20rem', xl: '25rem' }}
 
                     >
-                        <Flex
-                            justifyContent='space-between'
-                            alignItems='center'
-                        >
-                            <Text textAlign='left' fontSize='1.5rem' fontWeight='100' display='inline' color='#333333'
+                        <Flex direction='column' alignItems='center'>
+                            <Text textAlign='center' fontSize='1.5rem' fontWeight='100' display='inline' color='#333333'
                                 style={{ wordWrap: 'break-word', width: '75%' }}
                             >{data.name}</Text>
                             <Text fontSize='1.25rem' textAlign='center' fontWeight='300' >${data.price}</Text>
-
                         </Flex>
-
                     </View>
                 </View>
-
             </Link>
         </Card >
     )

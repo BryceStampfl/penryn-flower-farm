@@ -1,7 +1,7 @@
 import React from 'react';
 import { API, Storage } from 'aws-amplify';
 import { listProducts } from '../../graphql/queries';
-import { Loader, Collection, View, Flex, Text, Divider, Image } from '@aws-amplify/ui-react';
+import { Loader, Collection, View, Flex, Text, Divider, Image, Heading } from '@aws-amplify/ui-react';
 import { Link } from 'react-router-dom';
 import FlowerCard from './FlowerCard';
 import '../imageTextOverlay/style.css'
@@ -28,6 +28,7 @@ export const Flowers = () => {
             })
         );
         setProductData(productsFromAPI);
+        console.log(productsFromAPI)
     }
 
     if (productData === null) { return (<div><Loader size='large' /></div>) }
@@ -61,10 +62,7 @@ export const Flowers = () => {
                         orientation="horizontal" />
                 </View>
 
-                <Text
-                    fontFamily='Cormorant'
-                    fontSize='2.5rem'
-                >Browse Selection</Text>
+                <Heading level={1} fontSize={50} marginBottom='1rem' fontStyle='italic'>Browse Selection</Heading>
 
                 <Collection
                     items={productData}

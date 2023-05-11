@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { View, Flex, Heading, Image, Text, Button, StepperField } from '@aws-amplify/ui-react'
 import toast, { Toaster } from 'react-hot-toast';
 
@@ -15,22 +15,35 @@ export const FlowerPage = ({ addToCart }) => {
 
     const location = useLocation()
     const data = location.state.data
+    const navigate = useNavigate();
+    console.log(data)
 
     const handleOnStepChange = (newValue) => {
         setValue(newValue);
     };
 
-    const purchasePressed = () => {
-        toast.success(`Added ${value} bundles to the cart!`, {
-            position: 'top-center',
+    const cartPressed = () => {
+        if (value !== 0) {
+            toast.success(`Added ${value} bundles to the cart!`, {
+                position: 'top-center',
+            })
 
-        })
-
-        addToCart({
-            product: { data },
-            quantity: { value },
-        })
+            addToCart({
+                product: { data },
+                quantity: { value },
+            })
+            setValue(0)
+        } else {
+            toast.error(`Zero bundles selected!`)
+        }
     }
+
+    const purchasePressed = () => {
+        cartPressed()
+        navigate('/purchase')
+    }
+
+
 
     return (
         <View
@@ -88,8 +101,8 @@ export const FlowerPage = ({ addToCart }) => {
                         size='large'
                     />
                     <Flex gap='0px' >
-                        <Button fontSize='1.15rem' backgroundColor='#ffff7f' color='#36454F' isFullWidth={true} onClick={purchasePressed}>Add to Cart</Button>
-                        <Button fontSize='1.15rem' backgroundColor='#FFBF00' color='#36454F' isFullWidth={true}>Purchase</Button>
+                        <Button fontSize='1.15rem' backgroundColor='#ffff7f' color='#36454F' isFullWidth={true} onClick={cartPressed}>Add to Cart</Button>
+                        <Button fontSize='1.15rem' backgroundColor='#FFBF00' color='#36454F' isFullWidth={true} onClick={purchasePressed}>Purchase</Button>
                     </Flex>
                 </View>
             </Flex >

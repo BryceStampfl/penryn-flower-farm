@@ -17,8 +17,22 @@ const NavigationRoutes = () => {
     const [cart, setCart] = React.useState([])
 
     const addToCart = (data) => {
-        setCart([...cart, data])
-        console.log(cart)
+        console.log(data)
+        let index = cart.findIndex(ele => ele.product.data.id === data.product.data.id)
+        if (index !== -1) {
+            let temp = [...cart]
+            temp[index] = {
+                ...temp[index],
+                quantity: {
+                    ...temp[index].quantity,
+                    value: data.quantity.value + temp[index].quantity.value,
+                },
+            };
+            setCart(temp)
+        }
+        else {
+            setCart([...cart, data])
+        }
     }
 
     return (
@@ -27,7 +41,7 @@ const NavigationRoutes = () => {
             <Route path="/Flowers" element={<Flowers />} />
             <Route path="/Flowers/:id" element={<FlowerPage addToCart={addToCart} />} />
             <Route path="/Purchase/" element={<Purchase cart={cart} />} />
-            <Route path="/Subscription" element={<Subscription />} />
+            <Route path="/Subscription" element={<Subscription addToCart={addToCart} />} />
             <Route path="/GiftCards" element={<Subscription />} />
             <Route path="/About" element={<About />} />
             <Route path="/Gallery" element={<PhotoGallery />} />
